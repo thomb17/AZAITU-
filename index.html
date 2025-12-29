@@ -352,6 +352,10 @@
                             <span class="legend-label">Disponible</span>
                         </div>
                         <div class="legend-item">
+                            <span class="legend-color legend-checkout"></span>
+                            <span class="legend-label">Départ / Arrivée possible</span>
+                        </div>
+                        <div class="legend-item">
                             <span class="legend-color legend-booked"></span>
                             <span class="legend-label">Réservé</span>
                         </div>
@@ -747,160 +751,155 @@
         // 5. Remplace "webcal://" par "https://"
         const APPLE_CALENDAR_ICS_URL = 'https://p63-caldav.icloud.com/published/2/Mjg3NDQ2ODAzMjg3NDQ2ONlm9LhWVoIMUycVp-j4cI1oyAzrjbV2ja-EjJwcW4Bx_ZZKLpanrZ0lFJnarBOk8S-yq-yVxsXqL-BNcSvgc8s';
 
-        // Proxies CORS (fallback si un ne fonctionne pas)
-        const CORS_PROXIES = [
-            'https://corsproxy.io/?',
-            'https://api.allorigins.win/raw?url=',
-            'https://cors-anywhere.herokuapp.com/'
-        ];
+        // ===== CALENDRIER SIMPLIFIÉ =====
 
-        document.addEventListener('DOMContentLoaded', function() {
+        // Helper pour formater une date en "YYYY-MM-DD" (sans conversion UTC)
+        function formatDateLocal(date) {
+            return date.getFullYear() + '-' +
+                String(date.getMonth() + 1).padStart(2, '0') + '-' +
+                String(date.getDate()).padStart(2, '0');
+        }
+
+        // Sets pour stocker les dates (format: "YYYY-MM-DD")
+        let reservedDates = new Set();   // Jours où le client dort (nuitées)
+        let checkoutDates = new Set();   // Jours de départ (matin occupé, après-midi libre)
+        let checkinDates = new Set();    // Jours d'arrivée
+
+        // Charge les réservations depuis Apple Calendar
+        async function loadReservations() {
+            const CORS_PROXIES = [
+                'https://corsproxy.io/?',
+                'https://api.allorigins.win/raw?url='
+            ];
+
+            for (const proxy of CORS_PROXIES) {
+                try {
+                    const response = await fetch(proxy + encodeURIComponent(APPLE_CALENDAR_ICS_URL));
+                    if (!response.ok) continue;
+
+                    const icsData = await response.text();
+                    if (!icsData.includes('BEGIN:VCALENDAR')) continue;
+
+                    // Parse avec ical.js
+                    const jcalData = ICAL.parse(icsData);
+                    const comp = new ICAL.Component(jcalData);
+                    const vevents = comp.getAllSubcomponents('vevent');
+
+                    vevents.forEach(vevent => {
+                        const event = new ICAL.Event(vevent);
+                        let start = event.startDate.toJSDate();
+                        let end = event.endDate ? event.endDate.toJSDate() : start;
+
+                        // Pour les événements "toute la journée", iCal utilise DTEND exclusif
+                        // (ex: réservation "9-15 août" → DTEND = 16 août à minuit)
+                        // On détecte ça si l'heure est minuit
+                        let checkoutDate = new Date(end);
+                        if (end.getHours() === 0 && end.getMinutes() === 0) {
+                            // Événement toute la journée : le vrai checkout est la veille
+                            checkoutDate.setDate(checkoutDate.getDate() - 1);
+                        }
+
+                        // Premier jour = checkin
+                        const startStr = formatDateLocal(start);
+                        checkinDates.add(startStr);
+
+                        // Jour de checkout
+                        const checkoutStr = formatDateLocal(checkoutDate);
+                        checkoutDates.add(checkoutStr);
+
+                        // Jours où le client dort (du checkin jusqu'à la veille du checkout)
+                        let current = new Date(start);
+                        current.setHours(12, 0, 0, 0); // Midi pour éviter les problèmes de fuseau
+                        const lastNight = new Date(checkoutDate);
+                        lastNight.setHours(0, 0, 0, 0);
+
+                        while (current < lastNight) {
+                            const dateStr = formatDateLocal(current);
+                            reservedDates.add(dateStr);
+                            current.setDate(current.getDate() + 1);
+                        }
+
+                        console.log(`📅 Réservation: ${startStr} → checkout ${checkoutStr}`);
+                    });
+
+                    console.log('✅ Dates réservées:', reservedDates.size, '| Checkouts:', checkoutDates.size);
+                    return true;
+                } catch (e) {
+                    console.warn('Proxy échoué:', e.message);
+                }
+            }
+            return false;
+        }
+
+        // Initialise le calendrier
+        document.addEventListener('DOMContentLoaded', async function() {
             const calendarEl = document.getElementById('availability-calendar');
-
             if (!calendarEl) return;
 
+            // Charge d'abord les réservations
+            await loadReservations();
+
+            // Crée le calendrier
             const calendar = new FullCalendar.Calendar(calendarEl, {
                 initialView: 'dayGridMonth',
                 locale: 'fr',
-                firstDay: 1, // Lundi
+                firstDay: 1,
                 height: 'auto',
                 headerToolbar: {
                     left: 'prev',
                     center: 'title',
                     right: 'next'
                 },
-                buttonText: {
-                    today: "Aujourd'hui"
-                },
-                dayMaxEvents: true,
-                displayEventTime: false,
-                eventDisplay: 'block',
-                eventBackgroundColor: '#c17c74',
-                eventBorderColor: '#c17c74',
-                eventTextColor: '#ffffff',
-                dayCellClassNames: function(arg) {
-                    // Ajoute une classe pour les jours passés
-                    if (arg.date < new Date().setHours(0,0,0,0)) {
-                        return ['fc-day-past'];
-                    }
-                    return [];
-                },
-                events: async function(info, successCallback, failureCallback) {
-                    console.log('🗓️ Chargement du calendrier Apple...');
+                dayCellDidMount: function(info) {
+                    const dateStr = formatDateLocal(info.date);
+                    const cell = info.el;
+                    const dayNumber = cell.querySelector('.fc-daygrid-day-number');
 
-                    // Essaie chaque proxy jusqu'à ce qu'un fonctionne
-                    for (let i = 0; i < CORS_PROXIES.length; i++) {
-                        const proxy = CORS_PROXIES[i];
-                        console.log(`📡 Essai proxy ${i + 1}/${CORS_PROXIES.length}: ${proxy.substring(0, 30)}...`);
-
-                        try {
-                            const response = await fetch(proxy + encodeURIComponent(APPLE_CALENDAR_ICS_URL));
-
-                            if (!response.ok) {
-                                console.warn(`❌ Proxy ${i + 1} erreur: ${response.status}`);
-                                continue;
-                            }
-
-                            const icsData = await response.text();
-                            console.log('📄 Données ICS reçues:', icsData.substring(0, 200) + '...');
-
-                            // Vérifie que c'est bien un fichier ICS
-                            if (!icsData.includes('BEGIN:VCALENDAR')) {
-                                console.warn('⚠️ Réponse non-ICS:', icsData.substring(0, 100));
-                                continue;
-                            }
-
-                            const events = parseICS(icsData);
-                            console.log('✅ Événements trouvés:', events.length);
-                            events.forEach((e, i) => {
-                                console.log(`   Event ${i+1}: ${e.start} → ${e.end}`);
-                            });
-                            successCallback(events);
-                            return;
-
-                        } catch (error) {
-                            console.warn(`❌ Proxy ${i + 1} échoué:`, error.message);
-                        }
+                    // Jour passé
+                    if (info.date < new Date().setHours(0,0,0,0)) {
+                        cell.style.backgroundColor = '#e8dfd2';
+                        cell.style.opacity = '0.5';
+                        return;
                     }
 
-                    console.error('❌ Tous les proxies ont échoué');
-                    successCallback([]);
+                    const isReserved = reservedDates.has(dateStr);
+                    const isCheckout = checkoutDates.has(dateStr);
+                    const isCheckin = checkinDates.has(dateStr);
+
+                    // Jour de transition (checkout + checkin le même jour) = complet
+                    if (isCheckout && isCheckin) {
+                        cell.style.backgroundColor = '#8b7355';
+                        if (dayNumber) dayNumber.style.color = '#ffffff';
+                    }
+                    // Jour de checkout uniquement (matin occupé, après-midi libre)
+                    else if (isCheckout && !isReserved) {
+                        // Diagonale : marron en haut-gauche, crème en bas-droite
+                        cell.style.background = 'linear-gradient(135deg, #8b7355 50%, #faf8f5 50%)';
+                        cell.style.boxShadow = 'inset 0 0 0 1px #b8a068';
+                        if (dayNumber) dayNumber.style.color = '#ffffff';
+                    }
+                    // Jour de checkin uniquement (matin libre, après-midi occupé)
+                    else if (isCheckin && isReserved) {
+                        // Diagonale inversée : crème en haut-gauche, marron en bas-droite
+                        cell.style.background = 'linear-gradient(135deg, #faf8f5 50%, #8b7355 50%)';
+                        cell.style.boxShadow = 'inset 0 0 0 1px #b8a068';
+                        if (dayNumber) dayNumber.style.color = '#3a2d25';
+                    }
+                    // Jour réservé (nuitée complète, ni checkin ni checkout)
+                    else if (isReserved) {
+                        cell.style.backgroundColor = '#8b7355';
+                        if (dayNumber) dayNumber.style.color = '#ffffff';
+                    }
+                    // Jour disponible
+                    else {
+                        cell.style.backgroundColor = '#faf8f5';
+                        cell.style.boxShadow = 'inset 0 0 0 2px #b8a068';
+                    }
                 }
             });
 
             calendar.render();
         });
-
-        // Fonction pour parser le format ICS d'Apple Calendar
-        function parseICS(icsData) {
-            const events = [];
-
-            try {
-                const jcalData = ICAL.parse(icsData);
-                const comp = new ICAL.Component(jcalData);
-                const vevents = comp.getAllSubcomponents('vevent');
-
-                vevents.forEach(vevent => {
-                    const event = new ICAL.Event(vevent);
-
-                    // Récupère les dates et le titre
-                    let start = event.startDate.toJSDate();
-                    let end = event.endDate ? event.endDate.toJSDate() : start;
-                    let title = event.summary || 'Réservé';
-
-                    events.push({
-                        title: title,
-                        start: start,
-                        end: end,
-                        backgroundColor: '#c17c74',
-                        borderColor: '#c17c74',
-                        textColor: '#ffffff'
-                    });
-                });
-            } catch (e) {
-                console.error('Erreur parsing ICS:', e);
-                // Fallback: parser basique si ical.js échoue
-                const lines = icsData.split('\n');
-                let currentEvent = null;
-
-                lines.forEach(line => {
-                    line = line.trim();
-                    if (line === 'BEGIN:VEVENT') {
-                        currentEvent = {};
-                    } else if (line === 'END:VEVENT' && currentEvent) {
-                        if (currentEvent.start) {
-                            events.push({
-                                title: currentEvent.title || 'Réservé',
-                                start: currentEvent.start,
-                                end: currentEvent.end || currentEvent.start,
-                                backgroundColor: '#c17c74',
-                                textColor: '#ffffff'
-                            });
-                        }
-                        currentEvent = null;
-                    } else if (currentEvent) {
-                        if (line.startsWith('DTSTART')) {
-                            currentEvent.start = parseICSDate(line);
-                        } else if (line.startsWith('DTEND')) {
-                            currentEvent.end = parseICSDate(line);
-                        } else if (line.startsWith('SUMMARY:')) {
-                            currentEvent.title = line.substring(8);
-                        }
-                    }
-                });
-            }
-
-            return events;
-        }
-
-        // Parse une date ICS (format: 20240615 ou 20240615T120000Z)
-        function parseICSDate(line) {
-            const match = line.match(/(\d{4})(\d{2})(\d{2})/);
-            if (match) {
-                return new Date(match[1], match[2] - 1, match[3]);
-            }
-            return null;
-        }
 
         // Helper: obtenir le prochain samedi
         function getNextSaturday(weeksFromNow) {

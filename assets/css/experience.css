@@ -254,18 +254,17 @@ a {
 
 .act-bg {
     position: absolute;
-    inset: 0;
+    inset: -50% 0 0 0; /* Étend vers le haut pour compenser le parallax */
+    background: var(--earth); /* Couleur de secours */
 }
 
 .act-bg video,
 .act-bg img,
 .act-bg-fallback {
     width: 100%;
-    height: 100%;
+    height: 150%; /* Plus haut pour couvrir le parallax */
     object-fit: cover;
-    object-position: 100% 20%;
-    transform: scale(1.2);
-    transform-origin: center top;
+    object-position: 100% 30%;
 }
 
 .act-overlay {
@@ -1603,6 +1602,11 @@ a.contact-info-item:hover {
     border: 2px solid var(--gold);
 }
 
+.legend-checkout {
+    background: linear-gradient(135deg, var(--earth-400) 50%, var(--cream) 50%);
+    border: 1px solid var(--gold);
+}
+
 .legend-booked {
     background: var(--earth-400);
     border: 1px solid var(--earth-600);
@@ -1679,44 +1683,25 @@ a.contact-info-item:hover {
     padding: 0.75rem 0;
 }
 
-/* Dates disponibles = fond crème */
+/* Dates disponibles = fond crème avec bordure or (comme la légende) */
 #availability-calendar .fc-daygrid-day {
     background: var(--cream);
+    box-shadow: inset 0 0 0 2px var(--gold);
 }
 
 /* Dates passées = grisées */
 #availability-calendar .fc-day-past {
     background: var(--sand) !important;
+    box-shadow: none !important;
     opacity: 0.5;
 }
 
 #availability-calendar .fc-daygrid-day.fc-day-today {
     background: var(--cream) !important;
-    box-shadow: inset 0 0 0 2px var(--gold);
+    box-shadow: inset 0 0 0 3px var(--gold) !important;
 }
 
-#availability-calendar .fc-daygrid-day:hover {
-    background: var(--cream-dark);
-}
-
-#availability-calendar .fc-event {
-    background: var(--earth-400);
-    border: none;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    padding: 2px 6px;
-    color: var(--white);
-}
-
-/* Style pour les événements en mode background (dates réservées) */
-#availability-calendar .fc-bg-event {
-    background: var(--earth-400) !important;
-    opacity: 0.85 !important;
-}
-
-#availability-calendar .fc-event-title {
-    font-weight: 500;
-}
+/* Les styles des cellules (couleurs réservé/disponible) sont appliqués via JavaScript */
 
 #availability-calendar .fc-daygrid-day-frame {
     min-height: 80px;
