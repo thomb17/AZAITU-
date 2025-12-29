@@ -12,10 +12,13 @@
     --earth-200: #b8a68e;
     --earth-400: #8b7355;
     --earth-600: #6e5542;
+    --earth-700: #5a4535;
     --earth: #3a2d25;
     --gold-light: #d4c4a0;
     --gold: #b8a068;
     --gold-dark: #96824a;
+    --terracotta: #c17c74;
+    --terracotta-light: #d4a59e;
 
     --font-serif: 'Cormorant Garamond', Georgia, serif;
     --font-sans: 'Inter', -apple-system, sans-serif;
@@ -1578,6 +1581,7 @@ a.contact-info-item:hover {
 
 .legend-booked {
     background: var(--terracotta);
+    border: 1px solid var(--terracotta);
 }
 
 .legend-label {
