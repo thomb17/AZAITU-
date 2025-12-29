@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie | Villa Azaitu - Palombaggia, Corse</title>
+    <meta name="description" content="Découvrez en images tous les espaces de la Villa Azaitu : suites, piscine, salle de cinéma, cave à vins et vues panoramiques sur Palombaggia.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+
+    <!-- Fonts & CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/galerie.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-circle"></div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <header class="header scrolled">
+        <nav class="nav">
+            <a href="index.html" class="logo">Villa Azaitu</a>
+            <div class="nav-links">
+                <a href="index.html#villa">La Villa</a>
+                <a href="index.html#galerie">Galerie</a>
+                <a href="index.html#espaces">Espaces</a>
+                <a href="index.html#experience">Expérience</a>
+                <a href="index.html#contact" class="btn-nav">Réserver</a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#villa">La Villa</a>
+        <a href="index.html#galerie">Galerie</a>
+        <a href="index.html#espaces">Espaces</a>
+        <a href="index.html#experience">Expérience</a>
+        <a href="index.html#contact">Contact</a>
+    </div>
+
+    <!-- Gallery Hero Compact -->
+    <section class="gallery-hero" id="gallery-hero">
+        <!-- Background Layer -->
+        <div class="gallery-hero-bg">
+            <img src="assets/images/drone-3.jpg" alt="Vue aérienne Villa Azaitu">
+        </div>
+        <div class="gallery-hero-overlay"></div>
+        <div class="gallery-hero-grain"></div>
+
+        <!-- Content -->
+        <div class="container">
+            <div class="gallery-hero-content">
+                <span class="section-label">Collection</span>
+                <h1 class="gallery-title">
+                    <span class="title-line">Explorez</span>
+                    <span class="title-line title-line--accent">la Villa</span>
+                </h1>
+                <p class="gallery-subtitle">57 photographies pour découvrir chaque espace</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Filters -->
+    <section class="gallery-filters">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Tout</button>
+                <button class="filter-btn" data-filter="vues">Vues & Extérieurs</button>
+                <button class="filter-btn" data-filter="piscine">Piscine & Terrasses</button>
+                <button class="filter-btn" data-filter="master">Suite Master</button>
+                <button class="filter-btn" data-filter="suites">Les Suites</button>
+                <button class="filter-btn" data-filter="sdb">Salles de Bain</button>
+                <button class="filter-btn" data-filter="vie">Espaces de Vie</button>
+                <button class="filter-btn" data-filter="loisirs">Loisirs</button>
+                <button class="filter-btn" data-filter="annexe">Dépendance</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Gallery -->
+    <section class="full-gallery">
+        <div class="container">
+            <div class="gallery-grid-full">
+
+                <!-- VUES & EXTÉRIEURS -->
+                <div class="gallery-item-full size-large" data-category="vues" data-src="assets/images/hero-villa.jpg" data-caption="Villa Azaitu - Vue Extérieure">
+                    <img src="assets/images/hero-villa.jpg" alt="Villa extérieure">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Villa Azaitu</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full size-wide" data-category="vues" data-src="assets/images/hero-drone.jpg" data-caption="Vue Aérienne">
+                    <img src="assets/images/hero-drone.jpg" alt="Vue drone">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Vue Aérienne</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vues" data-src="assets/images/drone-2.jpg" data-caption="Vue Drone">
+                    <img src="assets/images/drone-2.jpg" alt="Vue drone 2">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Vue Drone</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vues" data-src="assets/images/drone-3.jpg" data-caption="Vue Aérienne">
+                    <img src="assets/images/drone-3.jpg" alt="Vue drone 3">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Vue Aérienne</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vues" data-src="assets/images/baie-palombaggia.jpg" data-caption="Baie de Palombaggia">
+                    <img src="assets/images/baie-palombaggia.jpg" alt="Baie de Palombaggia">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Baie de Palombaggia</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vues" data-src="assets/images/baie-2.jpg" data-caption="Vue sur la Baie">
+                    <img src="assets/images/baie-2.jpg" alt="Vue baie">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Vue sur la Baie</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vues" data-src="assets/images/hero-sunset.jpg" data-caption="Coucher de Soleil">
+                    <img src="assets/images/hero-sunset.jpg" alt="Coucher de soleil">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Coucher de Soleil</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vues" data-src="assets/images/entree.jpg" data-caption="Entrée avec Vue">
+                    <img src="assets/images/entree.jpg" alt="Entrée">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Entrée avec Vue</span>
+                    </div>
+                </div>
+
+                <!-- PISCINE & TERRASSES -->
+                <div class="gallery-item-full size-wide" data-category="piscine" data-src="assets/images/piscine-1.jpg" data-caption="Piscine à Débordement">
+                    <img src="assets/images/piscine-1.jpg" alt="Piscine">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Piscine à Débordement</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full size-tall" data-category="piscine" data-src="assets/images/piscine-2.jpg" data-caption="Piscine au Coucher du Soleil">
+                    <img src="assets/images/piscine-2.jpg" alt="Piscine sunset">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Piscine au Coucher du Soleil</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="piscine" data-src="assets/images/piscine-3.jpg" data-caption="Vue Piscine">
+                    <img src="assets/images/piscine-3.jpg" alt="Vue piscine">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Vue Piscine</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="piscine" data-src="assets/images/transat.jpg" data-caption="Espace Détente">
+                    <img src="assets/images/transat.jpg" alt="Transats">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Espace Détente</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="piscine" data-src="assets/images/terrasse.jpg" data-caption="La Terrasse">
+                    <img src="assets/images/terrasse.jpg" alt="Terrasse">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">La Terrasse</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="piscine" data-src="assets/images/terrasse-master.jpg" data-caption="Terrasse Master">
+                    <img src="assets/images/terrasse-master.jpg" alt="Terrasse master">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Terrasse Master</span>
+                    </div>
+                </div>
+
+                <!-- SUITE MASTER -->
+                <div class="gallery-item-full size-large" data-category="master" data-src="assets/images/master.jpg" data-caption="Suite Master">
+                    <img src="assets/images/master.jpg" alt="Suite Master">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Suite Master</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="master" data-src="assets/images/master-jardin.jpg" data-caption="Suite Master - Vue Jardin">
+                    <img src="assets/images/master-jardin.jpg" alt="Suite Master jardin">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Suite Master - Vue Jardin</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="master" data-src="assets/images/master-2.jpg" data-caption="Suite Master">
+                    <img src="assets/images/master-2.jpg" alt="Suite Master">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Suite Master</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="master" data-src="assets/images/master-3.jpg" data-caption="Suite Master">
+                    <img src="assets/images/master-3.jpg" alt="Suite Master">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Suite Master</span>
+                    </div>
+                </div>
+
+                <!-- LES SUITES -->
+                <div class="gallery-item-full" data-category="suites" data-src="assets/images/suite-1.jpg" data-caption="Suite 1">
+                    <img src="assets/images/suite-1.jpg" alt="Suite 1">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Suite 1</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="suites" data-src="assets/images/suite-1b.jpg" data-caption="Suite 1">
+                    <img src="assets/images/suite-1b.jpg" alt="Suite 1">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Suite 1</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="suites" data-src="assets/images/suite-1c.jpg" data-caption="Suite 1">
+                    <img src="assets/images/suite-1c.jpg" alt="Suite 1">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Suite 1</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="suites" data-src="assets/images/suite-2.jpg" data-caption="Suite 2">
+                    <img src="assets/images/suite-2.jpg" alt="Suite 2">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Suite 2</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="suites" data-src="assets/images/suite-2b.jpg" data-caption="Suite 2">
+                    <img src="assets/images/suite-2b.jpg" alt="Suite 2">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Suite 2</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="suites" data-src="assets/images/suite-2c.jpg" data-caption="Suite 2">
+                    <img src="assets/images/suite-2c.jpg" alt="Suite 2">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Suite 2</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="suites" data-src="assets/images/suite-2e.jpg" data-caption="Suite 2">
+                    <img src="assets/images/suite-2e.jpg" alt="Suite 2">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Suite 2</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="suites" data-src="assets/images/suite-3.jpg" data-caption="Suite 3">
+                    <img src="assets/images/suite-3.jpg" alt="Suite 3">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Suite 3</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="suites" data-src="assets/images/suite-3b.jpg" data-caption="Suite 3">
+                    <img src="assets/images/suite-3b.jpg" alt="Suite 3">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Suite 3</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="suites" data-src="assets/images/suite-3c.jpg" data-caption="Suite 3">
+                    <img src="assets/images/suite-3c.jpg" alt="Suite 3">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Suite 3</span>
+                    </div>
+                </div>
+
+                <!-- SALLES DE BAIN -->
+                <div class="gallery-item-full" data-category="sdb" data-src="assets/images/sdb-master.jpg" data-caption="Salle de Bain Master">
+                    <img src="assets/images/sdb-master.jpg" alt="SDB Master">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Salle de Bain Master</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="sdb" data-src="assets/images/sdb-master-2.jpg" data-caption="Salle de Bain Master">
+                    <img src="assets/images/sdb-master-2.jpg" alt="SDB Master">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Salle de Bain Master</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="sdb" data-src="assets/images/sdb-1.jpg" data-caption="Salle de Bain">
+                    <img src="assets/images/sdb-1.jpg" alt="Salle de bain 1">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Salle de Bain</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="sdb" data-src="assets/images/sdb-2.jpg" data-caption="Salle de Bain">
+                    <img src="assets/images/sdb-2.jpg" alt="Salle de bain 2">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Salle de Bain</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="sdb" data-src="assets/images/sdb-3.jpg" data-caption="Salle de Bain">
+                    <img src="assets/images/sdb-3.jpg" alt="Salle de bain 3">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Salle de Bain</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="sdb" data-src="assets/images/sdb-annexe.jpg" data-caption="Salle de Bain Annexe">
+                    <img src="assets/images/sdb-annexe.jpg" alt="SDB Annexe">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Salle de Bain Annexe</span>
+                    </div>
+                </div>
+
+                <!-- ESPACES DE VIE -->
+                <div class="gallery-item-full size-large" data-category="vie" data-src="assets/images/salon-1.jpg" data-caption="Salon Principal">
+                    <img src="assets/images/salon-1.jpg" alt="Salon">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Salon Principal</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vie" data-src="assets/images/salon-2.jpg" data-caption="Salon">
+                    <img src="assets/images/salon-2.jpg" alt="Salon">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Salon</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vie" data-src="assets/images/salon-3.jpg" data-caption="Salon">
+                    <img src="assets/images/salon-3.jpg" alt="Salon">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Salon</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vie" data-src="assets/images/salon-4.jpg" data-caption="Salon">
+                    <img src="assets/images/salon-4.jpg" alt="Salon">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Salon</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vie" data-src="assets/images/salon-5.jpg" data-caption="Salon">
+                    <img src="assets/images/salon-5.jpg" alt="Salon">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Salon</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vie" data-src="assets/images/salon-deco.jpg" data-caption="Décoration">
+                    <img src="assets/images/salon-deco.jpg" alt="Décoration">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Décoration</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vie" data-src="assets/images/produits.jpg" data-caption="Produits Locaux">
+                    <img src="assets/images/produits.jpg" alt="Produits locaux">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Produits Locaux</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vie" data-src="assets/images/salle-manger.jpg" data-caption="Salle à Manger">
+                    <img src="assets/images/salle-manger.jpg" alt="Salle à manger">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Salle à Manger</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vie" data-src="assets/images/cuisine.jpg" data-caption="Cuisine Équipée">
+                    <img src="assets/images/cuisine.jpg" alt="Cuisine">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Cuisine Équipée</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vie" data-src="assets/images/couloir-1.jpg" data-caption="Couloir">
+                    <img src="assets/images/couloir-1.jpg" alt="Couloir">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Couloir</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vie" data-src="assets/images/couloir-2.jpg" data-caption="Couloir">
+                    <img src="assets/images/couloir-2.jpg" alt="Couloir">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Couloir</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vie" data-src="assets/images/couloir-3.jpg" data-caption="Couloir">
+                    <img src="assets/images/couloir-3.jpg" alt="Couloir">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Couloir</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vie" data-src="assets/images/escalier.jpg" data-caption="Escalier">
+                    <img src="assets/images/escalier.jpg" alt="Escalier">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Escalier</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vie" data-src="assets/images/buanderie.jpg" data-caption="Buanderie">
+                    <img src="assets/images/buanderie.jpg" alt="Buanderie">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Buanderie</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vie" data-src="assets/images/buanderie-2.jpg" data-caption="Buanderie">
+                    <img src="assets/images/buanderie-2.jpg" alt="Buanderie">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Buanderie</span>
+                    </div>
+                </div>
+
+                <!-- LOISIRS -->
+                <div class="gallery-item-full size-wide" data-category="loisirs" data-src="assets/images/cinema.jpg" data-caption="Salle de Cinéma Privée">
+                    <img src="assets/images/cinema.jpg" alt="Cinéma">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Salle de Cinéma Privée</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="loisirs" data-src="assets/images/cave.jpg" data-caption="Cave à Vins">
+                    <img src="assets/images/cave.jpg" alt="Cave à vins">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Cave à Vins</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="loisirs" data-src="assets/images/sport.jpg" data-caption="Espace Fitness">
+                    <img src="assets/images/sport.jpg" alt="Fitness">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Espace Fitness</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="loisirs" data-src="assets/images/sport-2.jpg" data-caption="Espace Fitness">
+                    <img src="assets/images/sport-2.jpg" alt="Fitness">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Espace Fitness</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="loisirs" data-src="assets/images/sport-4.jpg" data-caption="Espace Fitness">
+                    <img src="assets/images/sport-4.jpg" alt="Fitness">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Espace Fitness</span>
+                    </div>
+                </div>
+
+                <!-- DÉPENDANCE / ANNEXE -->
+                <div class="gallery-item-full" data-category="annexe" data-src="assets/images/annexe.jpg" data-caption="Dépendance">
+                    <img src="assets/images/annexe.jpg" alt="Annexe">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Dépendance</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="annexe" data-src="assets/images/annexe-2.jpg" data-caption="Dépendance">
+                    <img src="assets/images/annexe-2.jpg" alt="Annexe">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Dépendance</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="annexe" data-src="assets/images/annexe-3.jpg" data-caption="Dépendance">
+                    <img src="assets/images/annexe-3.jpg" alt="Annexe">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Dépendance</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Home -->
+    <section class="back-home">
+        <div class="container">
+            <a href="index.html" class="btn-back">Retour à l'accueil</a>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" aria-label="Fermer">&times;</button>
+        <button class="lightbox-prev" aria-label="Précédent">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6"></path>
+            </svg>
+        </button>
+        <button class="lightbox-next" aria-label="Suivant">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"></path>
+            </svg>
+        </button>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-image">
+            <p class="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-brand">
+                <span class="footer-logo">Villa Azaitu</span>
+                <p>L'art de vivre l'exception</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html#villa">La Villa</a>
+                <a href="galerie.html">Galerie</a>
+                <a href="index.html#espaces">Espaces</a>
+                <a href="index.html#experience">Expérience</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <div class="footer-info">
+                <p>© 2025 Villa Azaitu</p>
+                <p>Palombaggia, Corse</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/33664174747?text=Bonjour, je souhaite des informations sur la Villa Azaitu"
+       class="whatsapp-btn"
+       target="_blank"
+       rel="noopener"
+       aria-label="Contactez-nous sur WhatsApp">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="assets/js/galerie.js"></script>
+</body>
+</html>

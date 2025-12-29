@@ -1,0 +1,1357 @@
+/* Villa Azaitu — Luxe Raffiné
+   Élégance, sophistication, détail
+*/
+
+/* ===== FONDATION ===== */
+:root {
+    --white: #ffffff;
+    --cream: #faf8f5;
+    --cream-dark: #f3ebe0;
+    --sand: #e8dfd2;
+    --earth-100: #d4c4ae;
+    --earth-200: #b8a68e;
+    --earth-400: #8b7355;
+    --earth-600: #6e5542;
+    --earth: #3a2d25;
+    --gold-light: #d4c4a0;
+    --gold: #b8a068;
+    --gold-dark: #96824a;
+
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Inter', -apple-system, sans-serif;
+
+    --container: 1200px;
+    --container-narrow: 800px;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-size: 0.9375rem;
+    background: var(--cream);
+    color: var(--earth);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, video {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ===== NAVIGATION ===== */
+.nav-floating {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    background: transparent;
+    transition: background 0.4s, padding 0.4s;
+}
+
+.nav-floating.scrolled {
+    background: rgba(255,255,255,0.97);
+    padding: 1rem 3rem;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+}
+
+.nav-logo {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    transition: color 0.4s, text-shadow 0.4s;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.nav-floating.scrolled .nav-logo {
+    color: var(--earth);
+    text-shadow: none;
+}
+
+.nav-cta {
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid rgba(255,255,255,0.6);
+    color: var(--white);
+    transition: all 0.3s;
+    text-shadow: 0 1px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.15);
+}
+
+.nav-floating.scrolled .nav-cta {
+    border-color: var(--earth);
+    color: var(--earth);
+    text-shadow: none;
+    box-shadow: none;
+}
+
+.nav-cta:hover {
+    background: var(--white);
+    color: var(--earth);
+    border-color: var(--white);
+}
+
+.nav-floating.scrolled .nav-cta:hover {
+    background: var(--earth);
+    color: var(--white);
+}
+
+/* ===== SECTIONS ===== */
+.act {
+    position: relative;
+}
+
+/* ===== ACTE 1 : HERO ===== */
+.act-arrival {
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.act-bg {
+    position: absolute;
+    inset: 0;
+}
+
+.act-bg video,
+.act-bg img,
+.act-bg-fallback {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 100% 20%;
+    transform: scale(1.2);
+    transform-origin: center top;
+}
+
+.act-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(20, 15, 10, 0.45) 0%,
+        rgba(20, 15, 10, 0.35) 40%,
+        rgba(20, 15, 10, 0.5) 100%
+    );
+}
+
+.act-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: var(--white);
+    padding: 3rem 3rem;
+    max-width: 800px;
+    /* Subtle backdrop for better readability */
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.2) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.act-whisper {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    opacity: 0.95;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+.act-title {
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.35), 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.act-title span {
+    display: block;
+}
+
+.act-title-accent {
+    font-style: italic;
+    color: var(--gold-light);
+    text-shadow: 0 4px 20px rgba(0,0,0,0.35), 0 0 40px rgba(212, 196, 160, 0.3);
+}
+
+.act-description {
+    font-family: var(--font-serif);
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.6;
+    opacity: 1;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 0 2px 15px rgba(0,0,0,0.5);
+}
+
+.scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    z-index: 2;
+    color: var(--white);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.scroll-hint span {
+    font-family: var(--font-sans);
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.85;
+}
+
+.scroll-hint-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+}
+
+/* ===== ACTE 2 : INTRODUCTION ===== */
+.act-promise {
+    background: var(--cream);
+    padding: 8rem 2rem;
+}
+
+.promise-layout {
+    max-width: var(--container-narrow);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.promise-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 2rem;
+}
+
+.promise-statement {
+    font-family: var(--font-serif);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 300;
+    line-height: 1.35;
+    color: var(--earth);
+    margin-bottom: 2rem;
+}
+
+.promise-statement em {
+    font-style: italic;
+    color: var(--gold-dark);
+}
+
+.promise-text {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    font-weight: 300;
+    line-height: 1.85;
+    color: var(--earth-600);
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+/* ===== ACTE 3 : LE CHEMIN ===== */
+.act-path {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 80vh;
+}
+
+.path-visual {
+    position: relative;
+    overflow: hidden;
+}
+
+.path-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.path-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem;
+    background: var(--earth);
+    color: var(--white);
+}
+
+.path-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+}
+
+.path-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.path-title span {
+    display: block;
+}
+
+.path-title .highlight {
+    color: var(--gold);
+}
+
+.path-subtitle {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    font-style: italic;
+    color: var(--gold-light);
+    margin-bottom: 2rem;
+}
+
+.path-description {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.9;
+    opacity: 0.8;
+    max-width: 380px;
+    margin-bottom: 2.5rem;
+}
+
+.path-details {
+    display: flex;
+    gap: 3rem;
+}
+
+.path-detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.path-detail-label {
+    font-family: var(--font-sans);
+    font-size: 0.5625rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.375rem;
+}
+
+.path-detail-value {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    color: var(--white);
+}
+
+/* ===== ACTE 4 : LA VUE ===== */
+.act-view {
+    background: var(--cream);
+    padding: 8rem 2rem;
+}
+
+.view-container {
+    max-width: var(--container);
+    margin: 0 auto;
+}
+
+.view-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.view-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 1.5rem;
+}
+
+.view-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 300;
+    line-height: 1.3;
+    color: var(--earth);
+    margin-bottom: 1rem;
+}
+
+.view-subtitle {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--earth-400);
+}
+
+.view-gallery {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 1rem;
+}
+
+.view-image {
+    overflow: hidden;
+}
+
+.view-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.view-image:hover img {
+    transform: scale(1.03);
+}
+
+.view-image--main {
+    aspect-ratio: 4/3;
+}
+
+.view-image--side {
+    aspect-ratio: 3/4;
+}
+
+.view-quote {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem 2rem;
+    background: var(--cream-dark);
+    margin-top: 1rem;
+}
+
+.view-quote blockquote {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--earth);
+}
+
+/* ===== ACTE 5 : UNE JOURNÉE ===== */
+.act-day {
+    background: var(--white);
+    padding: 8rem 2rem;
+}
+
+.day-container {
+    max-width: var(--container);
+    margin: 0 auto;
+}
+
+.day-header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.day-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 1.5rem;
+}
+
+.day-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 300;
+    color: var(--earth);
+}
+
+.day-moments {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.moment {
+    text-align: center;
+}
+
+.moment-image {
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.moment-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.moment:hover .moment-image img {
+    transform: scale(1.05);
+}
+
+.moment-time {
+    font-family: var(--font-sans);
+    font-size: 0.5625rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 0.75rem;
+}
+
+.moment-title {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: var(--earth);
+    margin-bottom: 0.5rem;
+}
+
+.moment-text {
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--earth-600);
+}
+
+/* ===== ACTE 6 : LA MAISON ===== */
+.act-house {
+    background: var(--cream);
+    padding: 8rem 2rem;
+}
+
+.house-container {
+    max-width: var(--container);
+    margin: 0 auto;
+}
+
+.house-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.house-intro {
+    max-width: 450px;
+}
+
+.house-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 1.5rem;
+}
+
+.house-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 300;
+    line-height: 1.3;
+    color: var(--earth);
+    margin-bottom: 1.5rem;
+}
+
+.house-text {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    font-weight: 300;
+    line-height: 1.85;
+    color: var(--earth-600);
+}
+
+.house-features {
+    display: flex;
+    gap: 3rem;
+}
+
+.feature {
+    text-align: center;
+    padding: 2rem;
+    background: var(--white);
+    min-width: 140px;
+}
+
+.feature-number {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--gold-dark);
+    margin-bottom: 0.5rem;
+}
+
+.feature-label {
+    font-family: var(--font-sans);
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--earth-600);
+}
+
+.house-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.house-image {
+    overflow: hidden;
+    aspect-ratio: 4/3;
+}
+
+.house-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.house-image:hover img {
+    transform: scale(1.03);
+}
+
+.house-image--large {
+    grid-column: span 2;
+    grid-row: span 2;
+    aspect-ratio: auto;
+}
+
+/* ===== ACTE 7 : GALERIE TEASER ===== */
+.act-gallery {
+    background: var(--earth);
+    padding: 5rem 2rem;
+}
+
+.gallery-teaser {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    max-width: var(--container-narrow);
+    margin: 0 auto;
+    color: var(--white);
+}
+
+.gallery-teaser-images {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.gallery-teaser-images img {
+    width: 120px;
+    height: 90px;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.gallery-teaser:hover .gallery-teaser-images img {
+    opacity: 1;
+}
+
+.gallery-teaser-content {
+    text-align: left;
+}
+
+.gallery-teaser-count {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+}
+
+.gallery-teaser-label {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 1rem;
+}
+
+.gallery-teaser-cta {
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.625rem 1.25rem;
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: all 0.3s;
+}
+
+.gallery-teaser:hover .gallery-teaser-cta {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--earth);
+}
+
+/* ===== ACTE 8 : TÉMOIGNAGE ===== */
+.act-return {
+    background: var(--cream-dark);
+    padding: 6rem 2rem;
+}
+
+.return-content {
+    max-width: var(--container-narrow);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.return-quote {
+    font-family: var(--font-serif);
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--earth);
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.return-author {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: var(--earth-400);
+    margin-bottom: 3rem;
+}
+
+.return-statement {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--gold-dark);
+}
+
+/* ===== ACTE 9 : CONTACT ===== */
+.act-invitation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 80vh;
+}
+
+.invitation-visual {
+    position: relative;
+    overflow: hidden;
+}
+
+.invitation-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.invitation-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem;
+    background: var(--earth);
+    color: var(--white);
+}
+
+.invitation-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+}
+
+.invitation-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 300;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+}
+
+.invitation-text {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.8;
+    opacity: 0.8;
+    max-width: 380px;
+    margin-bottom: 3rem;
+}
+
+.invitation-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.invitation-detail {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+a.invitation-detail:hover {
+    border-color: var(--gold);
+}
+
+.invitation-detail-label {
+    font-family: var(--font-sans);
+    font-size: 0.5625rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.375rem;
+}
+
+.invitation-detail-value {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    font-weight: 300;
+}
+
+.invitation-cta {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 0.875rem 2rem;
+    background: var(--gold);
+    color: var(--earth);
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+
+.invitation-cta:hover {
+    background: var(--white);
+}
+
+/* ===== FOOTER ===== */
+.footer-minimal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+    background: var(--earth);
+    color: var(--white);
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-logo {
+    font-family: var(--font-serif);
+    font-size: 0.9375rem;
+    font-weight: 400;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a {
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+}
+
+.footer-tagline {
+    font-family: var(--font-sans);
+    font-size: 0.625rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.4;
+}
+
+/* ===== WHATSAPP ===== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 90;
+    width: 50px;
+    height: 50px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 3px 15px rgba(37, 211, 102, 0.35);
+    transition: transform 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.08);
+}
+
+.whatsapp-float svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .nav-floating {
+        padding: 1.25rem 2rem;
+    }
+
+    .act-path {
+        grid-template-columns: 1fr;
+    }
+
+    .path-visual {
+        height: 50vh;
+    }
+
+    .path-content {
+        padding: 4rem 2rem;
+    }
+
+    .view-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .view-image--main,
+    .view-image--side {
+        aspect-ratio: 16/10;
+    }
+
+    .day-moments {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem 2rem;
+    }
+
+    .house-header {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .house-features {
+        justify-content: flex-start;
+    }
+
+    .house-gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .house-image--large {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .act-invitation {
+        grid-template-columns: 1fr;
+    }
+
+    .invitation-visual {
+        height: 50vh;
+    }
+
+    .invitation-content {
+        padding: 4rem 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+
+    .nav-floating {
+        padding: 1rem 1.5rem;
+    }
+
+    .act-promise,
+    .act-view,
+    .act-day,
+    .act-house {
+        padding: 5rem 1.5rem;
+    }
+
+    .day-moments {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .moment-image {
+        aspect-ratio: 4/3;
+    }
+
+    .house-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .house-image--large {
+        grid-column: span 1;
+    }
+
+    .house-features {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .feature {
+        min-width: auto;
+    }
+
+    .gallery-teaser {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .gallery-teaser-content {
+        text-align: center;
+    }
+
+    .footer-minimal {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        padding: 2rem 1.5rem;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* ========================================
+   CALENDRIER DISPONIBILITÉS
+   ======================================== */
+
+.act-calendar {
+    background: var(--earth-50);
+    padding: 8rem 2rem;
+}
+
+.calendar-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.calendar-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.calendar-eyebrow {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+.calendar-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 300;
+    color: var(--earth-900);
+    margin-bottom: 0.75rem;
+}
+
+.calendar-subtitle {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--earth-600);
+    font-weight: 300;
+}
+
+.calendar-wrapper {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(58, 45, 37, 0.08);
+}
+
+.calendar-legend {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--earth-100);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+}
+
+.legend-available {
+    background: var(--earth-100);
+    border: 1px solid var(--earth-200);
+}
+
+.legend-booked {
+    background: var(--terracotta);
+}
+
+.legend-label {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    color: var(--earth-700);
+}
+
+.calendar-note {
+    text-align: center;
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    color: var(--earth-500);
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--earth-100);
+}
+
+/* FullCalendar Overrides */
+#availability-calendar {
+    font-family: var(--font-sans);
+}
+
+#availability-calendar .fc {
+    --fc-border-color: var(--earth-100);
+    --fc-button-bg-color: var(--earth-800);
+    --fc-button-border-color: var(--earth-800);
+    --fc-button-hover-bg-color: var(--earth-700);
+    --fc-button-hover-border-color: var(--earth-700);
+    --fc-button-active-bg-color: var(--gold);
+    --fc-button-active-border-color: var(--gold);
+    --fc-today-bg-color: rgba(201, 169, 98, 0.1);
+    --fc-neutral-bg-color: var(--earth-50);
+}
+
+#availability-calendar .fc-toolbar-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--earth-900);
+    text-transform: capitalize;
+}
+
+#availability-calendar .fc-button {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+#availability-calendar .fc-button:focus {
+    box-shadow: 0 0 0 2px rgba(201, 169, 98, 0.3);
+}
+
+#availability-calendar .fc-daygrid-day-number {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    color: var(--earth-700);
+    padding: 0.5rem;
+}
+
+#availability-calendar .fc-col-header-cell-cushion {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--earth-600);
+    padding: 0.75rem 0;
+}
+
+#availability-calendar .fc-daygrid-day.fc-day-today {
+    background: rgba(201, 169, 98, 0.08);
+}
+
+#availability-calendar .fc-daygrid-day:hover {
+    background: var(--earth-50);
+}
+
+#availability-calendar .fc-event {
+    background: var(--terracotta);
+    border: none;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    padding: 2px 6px;
+}
+
+/* Style pour les événements en mode background (dates réservées) */
+#availability-calendar .fc-bg-event {
+    background: var(--terracotta) !important;
+    opacity: 0.7 !important;
+}
+
+#availability-calendar .fc-event-title {
+    font-weight: 500;
+}
+
+#availability-calendar .fc-daygrid-day-frame {
+    min-height: 80px;
+}
+
+#availability-calendar .fc-scrollgrid {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#availability-calendar .fc-theme-standard td,
+#availability-calendar .fc-theme-standard th {
+    border-color: var(--earth-100);
+}
+
+/* Calendar Loading State */
+.calendar-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    color: var(--earth-600);
+}
+
+.calendar-loading::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--earth-200);
+    border-top-color: var(--gold);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Calendar Responsive */
+@media (max-width: 900px) {
+    .act-calendar {
+        padding: 6rem 1.5rem;
+    }
+
+    .calendar-wrapper {
+        padding: 1.5rem;
+    }
+
+    #availability-calendar .fc-toolbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #availability-calendar .fc-toolbar-title {
+        font-size: 1.25rem;
+    }
+
+    #availability-calendar .fc-daygrid-day-frame {
+        min-height: 60px;
+    }
+}
+
+@media (max-width: 600px) {
+    .calendar-legend {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .calendar-wrapper {
+        padding: 1rem;
+    }
+
+    #availability-calendar .fc-button {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.8rem;
+    }
+
+    #availability-calendar .fc-daygrid-day-number {
+        font-size: 0.75rem;
+        padding: 0.25rem;
+    }
+
+    #availability-calendar .fc-col-header-cell-cushion {
+        font-size: 0.65rem;
+    }
+}

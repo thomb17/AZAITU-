@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Villa Azaitu | Luxe & Sérénité à Palombaggia</title>
+    <meta name="description" content="Villa d'exception avec vue mer panoramique dans la baie de Palombaggia, Porto-Vecchio, Corse. 4 suites, piscine à débordement, 5 min de la plage.">
+
+    <!-- SEO & Open Graph -->
+    <meta name="keywords" content="villa luxe corse, location palombaggia, villa porto-vecchio, villa vue mer corse, location vacances corse sud">
+    <meta name="author" content="Villa Azaitu">
+    <meta property="og:title" content="Villa Azaitu | Luxe & Sérénité à Palombaggia">
+    <meta property="og:description" content="Villa d'exception avec vue mer panoramique dans la baie de Palombaggia. 4 suites, piscine à débordement, 5 min de la plus belle plage d'Europe.">
+    <meta property="og:image" content="assets/images/hero-villa.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+
+    <!-- Preload -->
+    <link rel="preload" href="assets/images/hero-villa.jpg" as="image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <span class="preloader-logo">Villa Azaitu</span>
+            <div class="preloader-line"></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor (Desktop) -->
+    <div class="custom-cursor" id="customCursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-circle"></div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo">Villa Azaitu</a>
+            <div class="nav-links">
+                <a href="#villa">La Villa</a>
+                <a href="#galerie">Galerie</a>
+                <a href="#espaces">Espaces</a>
+                <a href="#experience">Expérience</a>
+                <a href="#contact" class="btn-nav">Réserver</a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#villa">La Villa</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#espaces">Espaces</a>
+        <a href="#experience">Expérience</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Hero Cinématique -->
+    <section class="hero loaded" id="hero">
+        <!-- Layer 1: Background Image (Parallax lent) -->
+        <div class="hero-layer hero-layer--bg" data-speed="0.3">
+            <img src="assets/images/hero-villa.jpg" alt="Villa Azaitu - Vue sur la baie de Palombaggia" class="hero-image">
+        </div>
+
+        <!-- Layer 2: Overlay Gradient Organique -->
+        <div class="hero-layer hero-layer--overlay">
+            <div class="hero-overlay"></div>
+        </div>
+
+        <!-- Layer 3: Texture Grain -->
+        <div class="hero-layer hero-layer--grain"></div>
+
+        <!-- Content -->
+        <div class="hero-content">
+            <!-- Location avec coordonnées -->
+            <div class="hero-location-wrap">
+                <span class="hero-coords">41.5° N, 9.3° E</span>
+                <span class="hero-location-line"></span>
+                <span class="hero-location">Palombaggia, Corse</span>
+            </div>
+
+            <!-- Titre Split Animation -->
+            <h1 class="hero-title">
+                <span class="title-line" data-text="Villa">Villa</span>
+                <span class="title-line title-line--accent" data-text="Azaitu">Azaitu</span>
+            </h1>
+
+            <!-- Tagline Word by Word -->
+            <p class="hero-tagline">
+                <span class="tagline-word">L'art</span>
+                <span class="tagline-word">de</span>
+                <span class="tagline-word">vivre</span>
+                <span class="tagline-word">l'exception</span>
+            </p>
+
+            <!-- CTA Magnétique -->
+            <a href="#villa" class="btn-hero btn-magnetic">
+                <span class="btn-text">Découvrir</span>
+                <span class="btn-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                </span>
+            </a>
+        </div>
+
+        <!-- Scroll Fade Overlay -->
+        <div class="hero-scroll-fade"></div>
+
+        <!-- Scroll Indicator Artistique -->
+        <div class="scroll-indicator">
+            <svg class="scroll-line" viewBox="0 0 2 60" fill="none">
+                <path d="M1 0L1 60" stroke="currentColor" stroke-width="1" class="scroll-path"/>
+            </svg>
+            <span class="scroll-text">Défiler</span>
+        </div>
+    </section>
+
+    <!-- Introduction - La Découverte -->
+    <section class="intro" id="villa">
+        <!-- Fond décoratif -->
+        <div class="intro-bg-shape"></div>
+
+        <div class="intro-grid">
+            <!-- Colonne texte -->
+            <div class="intro-content">
+                <span class="intro-eyebrow">Palombaggia, Corse</span>
+
+                <h2 class="intro-title">
+                    <span class="intro-title-line">Là où le</span>
+                    <span class="intro-title-line intro-title-accent">maquis</span>
+                    <span class="intro-title-line">rencontre la mer</span>
+                </h2>
+
+                <div class="intro-text-wrap">
+                    <p class="intro-text">
+                        Villa Azaitu n'est pas une simple location. C'est une immersion
+                        dans l'âme de la Corse — entre maquis sauvage et eaux cristallines,
+                        entre silence et émerveillement.
+                    </p>
+                </div>
+
+                <!-- Stats verticales -->
+                <div class="intro-stats">
+                    <div class="intro-stat">
+                        <span class="intro-stat-number">4</span>
+                        <span class="intro-stat-line"></span>
+                        <span class="intro-stat-label">Suites avec vue</span>
+                    </div>
+                    <div class="intro-stat">
+                        <span class="intro-stat-number">5</span>
+                        <span class="intro-stat-line"></span>
+                        <span class="intro-stat-label">Minutes de la plage</span>
+                    </div>
+                    <div class="intro-stat">
+                        <span class="intro-stat-number">∞</span>
+                        <span class="intro-stat-line"></span>
+                        <span class="intro-stat-label">Piscine à débordement</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Composition d'images -->
+            <div class="intro-images">
+                <!-- Image principale -->
+                <div class="intro-image-main">
+                    <div class="intro-image-frame">
+                        <img src="assets/images/terrasse.jpg" alt="Terrasse avec vue mer">
+                    </div>
+                </div>
+
+                <!-- Image secondaire (décalée) -->
+                <div class="intro-image-secondary">
+                    <div class="intro-image-frame">
+                        <img src="assets/images/piscine-1.jpg" alt="Piscine à débordement">
+                    </div>
+                    <span class="intro-image-caption">Piscine à débordement</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery - L'Exploration -->
+    <section class="gallery" id="galerie">
+        <div class="gallery-header">
+            <div class="gallery-header-content">
+                <span class="gallery-eyebrow">La Galerie</span>
+                <h2 class="gallery-title">
+                    Chaque angle<br>
+                    <em>raconte une histoire</em>
+                </h2>
+            </div>
+            <div class="gallery-header-text">
+                <p>57 photographies pour découvrir Villa Azaitu sous toutes ses facettes — de l'aube dorée au crépuscule méditerranéen.</p>
+                <a href="galerie.html" class="gallery-link">
+                    <span>Voir la collection complète</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Composition éditoriale -->
+        <div class="gallery-editorial">
+            <!-- Rangée 1 : Grande image + 2 petites -->
+            <div class="gallery-row gallery-row--hero">
+                <div class="gallery-item gallery-item--featured" data-src="assets/images/hero-villa.jpg" data-caption="Villa Azaitu - Vue Extérieure">
+                    <div class="gallery-item-frame">
+                        <img src="assets/images/hero-villa.jpg" alt="Villa Azaitu extérieur">
+                    </div>
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-caption">Vue Extérieure</span>
+                    </div>
+                </div>
+                <div class="gallery-item-stack">
+                    <div class="gallery-item" data-src="assets/images/salon-1.jpg" data-caption="Le Salon Principal">
+                        <div class="gallery-item-frame">
+                            <img src="assets/images/salon-1.jpg" alt="Salon principal">
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-src="assets/images/master-jardin.jpg" data-caption="Suite Master">
+                        <div class="gallery-item-frame">
+                            <img src="assets/images/master-jardin.jpg" alt="Suite Master">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rangée 2 : 3 images égales avec citation -->
+            <div class="gallery-row gallery-row--trio">
+                <div class="gallery-item" data-src="assets/images/cuisine.jpg" data-caption="Cuisine Équipée">
+                    <div class="gallery-item-frame">
+                        <img src="assets/images/cuisine.jpg" alt="Cuisine">
+                    </div>
+                </div>
+                <div class="gallery-quote">
+                    <blockquote>
+                        "Chaque détail a été pensé pour sublimer l'instant"
+                    </blockquote>
+                </div>
+                <div class="gallery-item" data-src="assets/images/cinema.jpg" data-caption="Salle de Cinéma">
+                    <div class="gallery-item-frame">
+                        <img src="assets/images/cinema.jpg" alt="Salle de cinéma">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rangée 3 : Image panoramique pleine largeur -->
+            <div class="gallery-row gallery-row--panorama">
+                <div class="gallery-item gallery-item--wide" data-src="assets/images/baie-palombaggia.jpg" data-caption="Vue sur la Baie de Palombaggia">
+                    <div class="gallery-item-frame">
+                        <img src="assets/images/baie-palombaggia.jpg" alt="Vue sur la baie">
+                    </div>
+                    <div class="gallery-item-overlay gallery-item-overlay--full">
+                        <span class="gallery-item-label">Vue panoramique</span>
+                        <span class="gallery-item-caption">La Baie de Palombaggia</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rangée 4 : 2 images décalées -->
+            <div class="gallery-row gallery-row--offset">
+                <div class="gallery-item gallery-item--offset-left" data-src="assets/images/cave.jpg" data-caption="Cave à Vins">
+                    <div class="gallery-item-frame">
+                        <img src="assets/images/cave.jpg" alt="Cave à vins">
+                    </div>
+                </div>
+                <div class="gallery-item gallery-item--offset-right" data-src="assets/images/hero-sunset.jpg" data-caption="Coucher de Soleil">
+                    <div class="gallery-item-frame">
+                        <img src="assets/images/hero-sunset.jpg" alt="Coucher de soleil">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-footer">
+            <a href="galerie.html" class="btn-gallery">
+                <span>Explorer les 57 photos</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" aria-label="Fermer">&times;</button>
+        <button class="lightbox-prev" aria-label="Précédent">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6"></path>
+            </svg>
+        </button>
+        <button class="lightbox-next" aria-label="Suivant">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"></path>
+            </svg>
+        </button>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-image">
+            <p class="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <!-- Espaces - Les Univers -->
+    <section class="espaces" id="espaces">
+        <div class="espaces-header">
+            <span class="espaces-eyebrow">Les Espaces</span>
+            <h2 class="espaces-title">
+                Quatre univers,<br>
+                <em>une seule harmonie</em>
+            </h2>
+        </div>
+
+        <div class="espaces-showcase">
+            <!-- Espace vedette -->
+            <article class="espace-featured">
+                <div class="espace-featured-image">
+                    <img src="assets/images/salon-3.jpg" alt="Le Salon">
+                </div>
+                <div class="espace-featured-content">
+                    <span class="espace-number">01</span>
+                    <h3 class="espace-featured-title">Le Salon</h3>
+                    <p class="espace-featured-text">
+                        Un espace de vie où les baies vitrées panoramiques effacent la frontière
+                        entre intérieur et extérieur. Le regard se perd vers l'horizon méditerranéen,
+                        tandis que la lumière naturelle sculpte chaque instant.
+                    </p>
+                    <ul class="espace-features">
+                        <li>Vue mer à 180°</li>
+                        <li>Accès terrasse</li>
+                        <li>Cheminée design</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Espaces secondaires -->
+            <div class="espaces-secondary">
+                <article class="espace-card">
+                    <div class="espace-card-image">
+                        <img src="assets/images/suite-1.jpg" alt="Suite Master">
+                    </div>
+                    <div class="espace-card-content">
+                        <span class="espace-number">02</span>
+                        <h3 class="espace-card-title">Suite Master</h3>
+                        <p>Vue mer exceptionnelle et terrasse privée pour des réveils face à l'infini.</p>
+                    </div>
+                </article>
+
+                <article class="espace-card">
+                    <div class="espace-card-image">
+                        <img src="assets/images/piscine-2.jpg" alt="La Piscine">
+                    </div>
+                    <div class="espace-card-content">
+                        <span class="espace-number">03</span>
+                        <h3 class="espace-card-title">La Piscine</h3>
+                        <p>Débordement infini face au coucher de soleil. L'horizon devient le vôtre.</p>
+                    </div>
+                </article>
+
+                <article class="espace-card">
+                    <div class="espace-card-image">
+                        <img src="assets/images/cinema.jpg" alt="Le Cinéma">
+                    </div>
+                    <div class="espace-card-content">
+                        <span class="espace-number">04</span>
+                        <h3 class="espace-card-title">Le Cinéma</h3>
+                        <p>Salle privée pour des soirées en famille ou entre amis, sous les étoiles corses.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience - Le Voyage -->
+    <section class="experience" id="experience">
+        <div class="experience-bg">
+            <img src="assets/images/hero-drone.jpg" alt="Vue aérienne de la baie">
+        </div>
+        <div class="experience-overlay"></div>
+        <div class="experience-grain"></div>
+
+        <div class="experience-layout">
+            <!-- Colonne gauche : Grand titre -->
+            <div class="experience-intro">
+                <span class="experience-eyebrow">Le Voyage</span>
+                <h2 class="experience-title">
+                    <span class="experience-title-line">5 minutes</span>
+                    <span class="experience-title-line experience-title-accent">vers le paradis</span>
+                </h2>
+                <p class="experience-subtitle">De votre terrasse aux eaux cristallines de Palombaggia</p>
+            </div>
+
+            <!-- Colonne droite : Le parcours -->
+            <div class="journey-vertical">
+                <div class="journey-step">
+                    <div class="journey-step-marker">
+                        <span class="journey-time">0'</span>
+                        <span class="journey-line-v"></span>
+                    </div>
+                    <div class="journey-step-content">
+                        <h4>Le Départ</h4>
+                        <p>Quittez la terrasse, le maquis vous attend</p>
+                    </div>
+                </div>
+
+                <div class="journey-step">
+                    <div class="journey-step-marker">
+                        <span class="journey-time">3'</span>
+                        <span class="journey-line-v"></span>
+                    </div>
+                    <div class="journey-step-content">
+                        <h4>Le Maquis</h4>
+                        <p>Sentier parfumé de myrte, ciste et immortelle</p>
+                    </div>
+                </div>
+
+                <div class="journey-step journey-step--final">
+                    <div class="journey-step-marker">
+                        <span class="journey-time">5'</span>
+                    </div>
+                    <div class="journey-step-content">
+                        <h4>Palombaggia</h4>
+                        <p>L'une des plus belles plages d'Europe s'offre à vous</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Citation intégrée -->
+        <div class="experience-quote">
+            <blockquote>
+                "Le luxe véritable, c'est le temps<br>de contempler la beauté"
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Contact - L'Invitation -->
+    <section class="contact" id="contact">
+        <div class="contact-bg">
+            <img src="assets/images/hero-sunset.jpg" alt="Coucher de soleil sur la baie">
+        </div>
+        <div class="contact-overlay"></div>
+
+        <div class="contact-layout">
+            <div class="contact-content">
+                <span class="contact-eyebrow">Réservation</span>
+                <h2 class="contact-title">
+                    Vivez l'expérience<br>
+                    <em>Villa Azaitu</em>
+                </h2>
+                <p class="contact-intro">
+                    Chaque séjour est unique. Contactez-nous pour créer le vôtre.
+                </p>
+
+                <div class="contact-details">
+                    <a href="tel:+33664174747" class="contact-detail">
+                        <span class="contact-detail-label">Téléphone</span>
+                        <span class="contact-detail-value">+33 6 64 17 47 47</span>
+                    </a>
+
+                    <a href="mailto:scimadeleine@icloud.com" class="contact-detail">
+                        <span class="contact-detail-label">Email</span>
+                        <span class="contact-detail-value">scimadeleine@icloud.com</span>
+                    </a>
+
+                    <div class="contact-detail">
+                        <span class="contact-detail-label">Localisation</span>
+                        <span class="contact-detail-value">Palombaggia, Porto-Vecchio<br>Corse-du-Sud, France</span>
+                    </div>
+                </div>
+
+                <a href="mailto:scimadeleine@icloud.com?subject=Réservation Villa Azaitu" class="btn-contact">
+                    <span>Demander un devis</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="contact-decoration">
+                <div class="contact-coords">
+                    <span>41.5074° N</span>
+                    <span>9.2853° E</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-brand">
+                <span class="footer-logo">Villa Azaitu</span>
+                <p>L'art de vivre l'exception</p>
+            </div>
+            <div class="footer-links">
+                <a href="#villa">La Villa</a>
+                <a href="#galerie">Galerie</a>
+                <a href="#espaces">Espaces</a>
+                <a href="#experience">Expérience</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-info">
+                <p>© 2025 Villa Azaitu</p>
+                <p>Palombaggia, Corse</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/33664174747?text=Bonjour, je souhaite des informations sur la Villa Azaitu"
+       class="whatsapp-btn"
+       target="_blank"
+       rel="noopener"
+       aria-label="Contactez-nous sur WhatsApp">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- GSAP + ScrollTrigger pour animations cinématiques -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
