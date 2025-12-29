@@ -17,20 +17,25 @@
     <meta property="og:url" content="https://villa-azaitu.com/">
     <meta property="og:title" content="Villa Azaitu | Le Paradis Existe à Palombaggia">
     <meta property="og:description" content="Villa d'exception à 5 minutes à pied de Palombaggia. Vue mer féerique, piscine à débordement, 4 suites de luxe. Une expérience inoubliable en Corse du Sud.">
-    <meta property="og:image" content="https://villa-azaitu.com/assets/images/hero-sunset-pool.jpg">
+    <meta property="og:image" content="https://villa-azaitu.com/assets/images/hero-sunset-pool.webp">
     <meta property="og:locale" content="fr_FR">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Villa Azaitu | Location Villa de Luxe Palombaggia">
     <meta name="twitter:description" content="Villa d'exception à 5 min de Palombaggia. Piscine à débordement, vue mer panoramique, 4 suites. Le paradis existe en Corse.">
-    <meta name="twitter:image" content="https://villa-azaitu.com/assets/images/hero-sunset-pool.jpg">
+    <meta name="twitter:image" content="https://villa-azaitu.com/assets/images/hero-sunset-pool.webp">
 
     <!-- Geo Tags -->
     <meta name="geo.region" content="FR-2A">
     <meta name="geo.placename" content="Porto-Vecchio, Corse">
     <meta name="geo.position" content="41.5919;9.2795">
     <meta name="ICBM" content="41.5919, 9.2795">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    <meta name="theme-color" content="#3a2d25">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -90,10 +95,10 @@
     <!-- HERO : L'ARRIVÉE -->
     <header class="act act-arrival" role="banner">
         <div class="act-bg">
-            <video autoplay muted loop playsinline poster="assets/images/hero-sunset-pool.jpg" aria-hidden="true">
+            <video autoplay muted loop playsinline poster="assets/images/hero-sunset-pool.webp" aria-hidden="true">
                 <source src="assets/videos/arrival.mp4" type="video/mp4">
             </video>
-            <img src="assets/images/hero-sunset-pool.jpg" alt="Villa Azaitu au coucher du soleil - Piscine à débordement avec vue mer à Palombaggia, Corse du Sud" class="act-bg-fallback">
+            <img src="assets/images/hero-sunset-pool.webp" alt="Villa Azaitu au coucher du soleil - Piscine à débordement avec vue mer à Palombaggia, Corse du Sud" class="act-bg-fallback">
         </div>
         <div class="act-overlay"></div>
 
@@ -123,11 +128,12 @@
         </section>
 
         <!-- LE CHEMIN VERS PALOMBAGGIA -->
-        <section class="act act-path" aria-labelledby="path-title">
-            <div class="path-visual">
-                <img loading="lazy" src="assets/images/baie-palombaggia.jpg" alt="Plage de Palombaggia - Eaux turquoise et sable fin à 5 minutes de Villa Azaitu">
+        <section class="act act-path-immersive" aria-labelledby="path-title">
+            <div class="path-bg">
+                <img loading="lazy" src="assets/images/baie-palombaggia.webp" alt="Plage de Palombaggia - Eaux turquoise et sable fin à 5 minutes de Villa Azaitu">
+                <div class="path-bg-overlay"></div>
             </div>
-            <div class="path-content">
+            <div class="path-floating-card">
                 <span class="path-eyebrow">Accès direct à la plage</span>
                 <h2 id="path-title" class="path-title">
                     <span class="highlight">Cinq minutes</span>
@@ -163,10 +169,10 @@
 
                 <div class="view-gallery">
                     <figure class="view-image view-image--main">
-                        <img loading="lazy" src="assets/images/terrasse-lounge.jpg" alt="Salon extérieur de Villa Azaitu avec vue panoramique sur la piscine à débordement et la mer Méditerranée">
+                        <img loading="lazy" src="assets/images/terrasse-lounge.webp" alt="Salon extérieur de Villa Azaitu avec vue panoramique sur la piscine à débordement et la mer Méditerranée">
                     </figure>
                     <figure class="view-image view-image--side">
-                        <img loading="lazy" src="assets/images/terrasse-sunset.jpg" alt="Terrasse en bois au coucher de soleil avec vue sur la baie">
+                        <img loading="lazy" src="assets/images/terrasse-sunset.webp" alt="Terrasse en bois au coucher de soleil avec vue sur la baie">
                     </figure>
                     <blockquote class="view-quote">
                         <p>« On ne se lasse jamais de cette vue. Le matin, elle est douce. Le soir, elle est incandescente. Elle change, et nous avec. »</p>
@@ -177,49 +183,77 @@
 
         <!-- UNE JOURNÉE TYPE -->
         <section class="act act-day" aria-labelledby="day-title">
-            <div class="day-container">
-                <div class="day-header">
-                    <span class="day-eyebrow">L'art de vivre</span>
-                    <h2 id="day-title" class="day-title">Une journée au paradis</h2>
-                </div>
+            <div class="day-header-centered">
+                <span class="day-eyebrow">L'art de vivre</span>
+                <h2 id="day-title" class="day-title">Une journée au paradis</h2>
+            </div>
 
-                <div class="day-moments">
-                    <article class="moment">
-                        <div class="moment-image">
-                            <img loading="lazy" src="assets/images/petit-dejeuner.jpg" alt="Petit-déjeuner face à la mer sur la terrasse ensoleillée de Villa Azaitu">
-                        </div>
-                        <span class="moment-time">Le matin</span>
-                        <h3 class="moment-title">L'éveil</h3>
-                        <p class="moment-text">Le soleil effleure la baie. Petit-déjeuner sur la terrasse, face à la mer. Le silence, les premiers rayons, l'odeur du café. Un rituel précieux.</p>
-                    </article>
+            <div class="day-story">
+                <article class="story-block">
+                    <div class="story-image">
+                        <img loading="lazy" src="assets/images/petit-dejeuner.webp" alt="Petit-déjeuner face à la mer sur la terrasse ensoleillée de Villa Azaitu">
+                    </div>
+                    <div class="story-content">
+                        <span class="story-time">Le matin</span>
+                        <h3 class="story-title">L'éveil</h3>
+                        <p class="story-text">Le soleil effleure la baie. Petit-déjeuner sur la terrasse, face à la mer. Le silence, les premiers rayons, l'odeur du café. Un rituel précieux.</p>
+                    </div>
+                </article>
 
-                    <article class="moment">
-                        <div class="moment-image">
-                            <img loading="lazy" src="assets/images/piscine-1.jpg" alt="Piscine à débordement de Villa Azaitu en plein jour">
-                        </div>
-                        <span class="moment-time">L'après-midi</span>
-                        <h3 class="moment-title">La plénitude</h3>
-                        <p class="moment-text">La piscine à débordement se confond avec l'horizon. Plongeon, lecture au soleil, sieste à l'ombre. Le temps s'étire. Le bonheur, simplement.</p>
-                    </article>
+                <article class="story-block story-block--reverse">
+                    <div class="story-image">
+                        <img loading="lazy" src="assets/images/piscine-1.webp" alt="Piscine à débordement de Villa Azaitu en plein jour">
+                    </div>
+                    <div class="story-content">
+                        <span class="story-time">L'après-midi</span>
+                        <h3 class="story-title">La plénitude</h3>
+                        <p class="story-text">La piscine à débordement se confond avec l'horizon. Plongeon, lecture au soleil, sieste à l'ombre. Le temps s'étire. Le bonheur, simplement.</p>
+                    </div>
+                </article>
 
-                    <article class="moment">
-                        <div class="moment-image">
-                            <img loading="lazy" src="assets/images/piscine-crepuscule.jpg" alt="Piscine avec reflets magiques du coucher de soleil">
-                        </div>
-                        <span class="moment-time">Le crépuscule</span>
-                        <h3 class="moment-title">La magie</h3>
-                        <p class="moment-text">Le ciel s'embrase. Rose, or, pourpre. Les îles Cerbicales se dessinent à l'horizon. Un verre à la main, on assiste au plus beau spectacle de Méditerranée.</p>
-                    </article>
+                <article class="story-block">
+                    <div class="story-image">
+                        <img loading="lazy" src="assets/images/sport-2.webp" alt="Salle de fitness équipée à Villa Azaitu">
+                    </div>
+                    <div class="story-content">
+                        <span class="story-time">Le sport</span>
+                        <h3 class="story-title">L'énergie</h3>
+                        <p class="story-text">Une salle de fitness entièrement équipée. Cardio, musculation, yoga face à la vue. Le corps s'éveille, l'énergie circule.</p>
+                    </div>
+                </article>
 
-                    <article class="moment">
-                        <div class="moment-image">
-                            <img loading="lazy" src="assets/images/cinema.jpg" alt="Salle de cinéma privée avec écran grand format à Villa Azaitu">
-                        </div>
-                        <span class="moment-time">La nuit</span>
-                        <h3 class="moment-title">L'intimité</h3>
-                        <p class="moment-text">Film en famille dans le cinéma privé. Dîner sous les étoiles. La nuit corse enveloppe la villa de sa douceur. Le temps s'arrête.</p>
-                    </article>
-                </div>
+                <article class="story-block story-block--reverse">
+                    <div class="story-image">
+                        <img loading="lazy" src="assets/images/produits.webp" alt="Produits de bien-être et soins à Villa Azaitu">
+                    </div>
+                    <div class="story-content">
+                        <span class="story-time">Le bien-être</span>
+                        <h3 class="story-title">La ressource</h3>
+                        <p class="story-text">Des soins d'exception à domicile. Massage sur réservation avec des praticiens locaux. Produits naturels corses. Le corps se régénère, l'esprit s'apaise.</p>
+                    </div>
+                </article>
+
+                <article class="story-block">
+                    <div class="story-image">
+                        <img loading="lazy" src="assets/images/piscine-crepuscule.webp" alt="Piscine avec reflets magiques du coucher de soleil">
+                    </div>
+                    <div class="story-content">
+                        <span class="story-time">Le crépuscule</span>
+                        <h3 class="story-title">La magie</h3>
+                        <p class="story-text">Le ciel s'embrase. Rose, or, pourpre. Les îles Cerbicales se dessinent à l'horizon. Un verre à la main, on assiste au plus beau spectacle de Méditerranée.</p>
+                    </div>
+                </article>
+
+                <article class="story-block story-block--reverse">
+                    <div class="story-image">
+                        <img loading="lazy" src="assets/images/cinema.webp" alt="Salle de cinéma privée avec écran grand format à Villa Azaitu">
+                    </div>
+                    <div class="story-content">
+                        <span class="story-time">La nuit</span>
+                        <h3 class="story-title">L'intimité</h3>
+                        <p class="story-text">Film en famille dans le cinéma privé. Dîner sous les étoiles. La nuit corse enveloppe la villa de sa douceur. Le temps s'arrête.</p>
+                    </div>
+                </article>
             </div>
         </section>
 
@@ -250,22 +284,22 @@
 
                 <div class="house-gallery">
                     <figure class="house-image house-image--large">
-                        <img loading="lazy" src="assets/images/cuisine-vue-mer.jpg" alt="Cuisine et salle à manger ouvertes sur la terrasse avec vue mer - Villa Azaitu">
+                        <img loading="lazy" src="assets/images/cuisine-vue-mer.webp" alt="Cuisine et salle à manger ouvertes sur la terrasse avec vue mer - Villa Azaitu">
                     </figure>
                     <figure class="house-image">
-                        <img loading="lazy" src="assets/images/salon-panorama.jpg" alt="Grand salon lumineux avec baies vitrées panoramiques - Villa Azaitu">
+                        <img loading="lazy" src="assets/images/salon-panorama.webp" alt="Grand salon lumineux avec baies vitrées panoramiques - Villa Azaitu">
                     </figure>
                     <figure class="house-image">
-                        <img loading="lazy" src="assets/images/cuisine.jpg" alt="Cuisine équipée haut de gamme avec îlot central - Villa Azaitu">
+                        <img loading="lazy" src="assets/images/cuisine.webp" alt="Cuisine équipée haut de gamme avec îlot central - Villa Azaitu">
                     </figure>
                     <figure class="house-image">
-                        <img loading="lazy" src="assets/images/suite-1.jpg" alt="Suite parentale avec vue mer et accès terrasse - Villa Azaitu">
+                        <img loading="lazy" src="assets/images/suite-1.webp" alt="Suite parentale avec vue mer et accès terrasse - Villa Azaitu">
                     </figure>
                     <figure class="house-image">
-                        <img loading="lazy" src="assets/images/sdb-master.jpg" alt="Salle de bain master avec finitions haut de gamme - Villa Azaitu">
+                        <img loading="lazy" src="assets/images/sdb-master.webp" alt="Salle de bain master avec finitions haut de gamme - Villa Azaitu">
                     </figure>
                     <figure class="house-image">
-                        <img loading="lazy" src="assets/images/hero-drone.jpg" alt="Vue aérienne de Villa Azaitu et sa piscine à débordement">
+                        <img loading="lazy" src="assets/images/hero-drone.webp" alt="Vue aérienne de Villa Azaitu et sa piscine à débordement">
                     </figure>
                 </div>
             </div>
@@ -275,9 +309,9 @@
         <section class="act act-gallery" aria-label="Galerie photos">
             <a href="galerie.html" class="gallery-teaser">
                 <div class="gallery-teaser-images">
-                    <img loading="lazy" src="assets/images/piscine-2.jpg" alt="Piscine à débordement vue de la terrasse">
-                    <img loading="lazy" src="assets/images/salon-1.jpg" alt="Grand salon design de Villa Azaitu">
-                    <img loading="lazy" src="assets/images/master-jardin.jpg" alt="Suite master avec accès jardin">
+                    <img loading="lazy" src="assets/images/piscine-2.webp" alt="Piscine à débordement vue de la terrasse">
+                    <img loading="lazy" src="assets/images/salon-1.webp" alt="Grand salon design de Villa Azaitu">
+                    <img loading="lazy" src="assets/images/master-jardin.webp" alt="Suite master avec accès jardin">
                 </div>
                 <div class="gallery-teaser-content">
                     <span class="gallery-teaser-count">57</span>
@@ -324,74 +358,73 @@
         </section>
 
         <!-- CONTACT & RÉSERVATION -->
-        <section class="act act-invitation" id="contact" aria-labelledby="contact-title">
-            <div class="invitation-visual">
-                <img loading="lazy" src="assets/images/drone-sunset.jpg" alt="Vue aérienne de Villa Azaitu au coucher de soleil">
-            </div>
+        <section class="act act-contact-minimal" id="contact" aria-labelledby="contact-title">
+            <div class="contact-container">
+                <div class="contact-header">
+                    <span class="contact-eyebrow">Réservation</span>
+                    <h2 id="contact-title" class="contact-title">Vivez l'expérience<br>à votre tour</h2>
+                    <p class="contact-subtitle">De mai à octobre, Villa Azaitu vous ouvre ses portes. Location à la semaine en haute saison, séjours flexibles hors saison.</p>
+                </div>
 
-            <div class="invitation-content">
-                <span class="invitation-eyebrow">Réservation</span>
-                <h2 id="contact-title" class="invitation-title">Vivez l'expérience<br>à votre tour</h2>
-                <p class="invitation-text">De mai à octobre, Villa Azaitu vous ouvre ses portes. Location à la semaine en haute saison, séjours flexibles hors saison.</p>
+                <div class="contact-grid">
+                    <!-- Formulaire -->
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="form-name">Nom complet</label>
+                                <input type="text" id="form-name" name="name" required placeholder="Votre nom">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email">Email</label>
+                                <input type="email" id="form-email" name="email" required placeholder="votre@email.com">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="form-dates">Dates souhaitées</label>
+                                <input type="text" id="form-dates" name="dates" placeholder="Ex: 15-22 juillet 2025">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-guests">Nombre de personnes</label>
+                                <select id="form-guests" name="guests">
+                                    <option value="">Sélectionner</option>
+                                    <option value="2">2 personnes</option>
+                                    <option value="3">3 personnes</option>
+                                    <option value="4">4 personnes</option>
+                                    <option value="5">5 personnes</option>
+                                    <option value="6">6 personnes</option>
+                                    <option value="7">7 personnes</option>
+                                    <option value="8">8 personnes</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group form-group--full">
+                            <label for="form-message">Message</label>
+                            <textarea id="form-message" name="message" rows="4" placeholder="Votre message ou questions..."></textarea>
+                        </div>
+                        <button type="submit" class="contact-cta">Envoyer ma demande</button>
+                    </form>
 
-                <!-- Formulaire de contact -->
-                <form class="contact-form" id="contact-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="form-name">Nom complet</label>
-                            <input type="text" id="form-name" name="name" required placeholder="Votre nom">
+                    <!-- Coordonnées -->
+                    <address class="contact-info">
+                        <a href="tel:+33664174747" class="contact-info-item">
+                            <span class="contact-info-label">Téléphone</span>
+                            <span class="contact-info-value">+33 6 64 17 47 47</span>
+                        </a>
+                        <a href="https://wa.me/33618100568" target="_blank" rel="noopener" class="contact-info-item">
+                            <span class="contact-info-label">WhatsApp</span>
+                            <span class="contact-info-value">+33 6 18 10 05 68</span>
+                        </a>
+                        <a href="mailto:scimadeleine@icloud.com" class="contact-info-item">
+                            <span class="contact-info-label">Email</span>
+                            <span class="contact-info-value">scimadeleine@icloud.com</span>
+                        </a>
+                        <div class="contact-info-item">
+                            <span class="contact-info-label">Localisation</span>
+                            <span class="contact-info-value">Palombaggia, Porto-Vecchio<br>Corse-du-Sud, France</span>
                         </div>
-                        <div class="form-group">
-                            <label for="form-email">Email</label>
-                            <input type="email" id="form-email" name="email" required placeholder="votre@email.com">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="form-dates">Dates souhaitées</label>
-                            <input type="text" id="form-dates" name="dates" placeholder="Ex: 15-22 juillet 2025">
-                        </div>
-                        <div class="form-group">
-                            <label for="form-guests">Nombre de personnes</label>
-                            <select id="form-guests" name="guests">
-                                <option value="">Sélectionner</option>
-                                <option value="2">2 personnes</option>
-                                <option value="3">3 personnes</option>
-                                <option value="4">4 personnes</option>
-                                <option value="5">5 personnes</option>
-                                <option value="6">6 personnes</option>
-                                <option value="7">7 personnes</option>
-                                <option value="8">8 personnes</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group form-group--full">
-                        <label for="form-message">Message</label>
-                        <textarea id="form-message" name="message" rows="4" placeholder="Votre message ou questions..."></textarea>
-                    </div>
-                    <button type="submit" class="invitation-cta">Envoyer ma demande</button>
-                </form>
-
-                <div class="invitation-divider"></div>
-
-                <address class="invitation-details">
-                    <a href="tel:+33664174747" class="invitation-detail">
-                        <span class="invitation-detail-label">Téléphone</span>
-                        <span class="invitation-detail-value">+33 6 64 17 47 47</span>
-                    </a>
-                    <a href="https://wa.me/33618100568" target="_blank" rel="noopener" class="invitation-detail">
-                        <span class="invitation-detail-label">WhatsApp</span>
-                        <span class="invitation-detail-value">+33 6 18 10 05 68</span>
-                    </a>
-                    <a href="mailto:scimadeleine@icloud.com" class="invitation-detail">
-                        <span class="invitation-detail-label">Email</span>
-                        <span class="invitation-detail-value">scimadeleine@icloud.com</span>
-                    </a>
-                    <div class="invitation-detail">
-                        <span class="invitation-detail-label">Localisation</span>
-                        <span class="invitation-detail-value">Palombaggia, Porto-Vecchio<br>Corse-du-Sud, France</span>
-                    </div>
-                </address>
+                    </address>
+                </div>
             </div>
         </section>
     </main>
@@ -416,7 +449,187 @@
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/ical.js@1.5.0/build/ical.min.js"></script>
 
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+
     <script>
+        // ===== LENIS SMOOTH SCROLL =====
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            smoothWheel: true
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // Sync Lenis with GSAP ScrollTrigger
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => lenis.raf(time * 1000));
+        gsap.ticker.lagSmoothing(0);
+
+        // ===== GSAP SCROLL ANIMATIONS =====
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero title animation
+        gsap.from('.act-title span', {
+            y: 80,
+            opacity: 0,
+            duration: 1.2,
+            stagger: 0.2,
+            ease: 'power3.out',
+            delay: 0.3
+        });
+
+        gsap.from('.act-whisper', {
+            y: 30,
+            opacity: 0,
+            duration: 1,
+            ease: 'power3.out',
+            delay: 0.8
+        });
+
+        // Promise section
+        gsap.from('.promise-statement', {
+            scrollTrigger: {
+                trigger: '.act-promise',
+                start: 'top 80%',
+                toggleActions: 'play none none none'
+            },
+            y: 60,
+            opacity: 0,
+            duration: 1,
+            ease: 'power3.out'
+        });
+
+        gsap.from('.promise-text', {
+            scrollTrigger: {
+                trigger: '.act-promise',
+                start: 'top 70%',
+                toggleActions: 'play none none none'
+            },
+            y: 40,
+            opacity: 0,
+            duration: 1,
+            delay: 0.3,
+            ease: 'power3.out'
+        });
+
+        // Floating card animation (beach section)
+        gsap.from('.path-floating-card', {
+            scrollTrigger: {
+                trigger: '.act-path-immersive',
+                start: 'top 60%',
+                toggleActions: 'play none none none'
+            },
+            x: 100,
+            opacity: 0,
+            duration: 1.2,
+            ease: 'power3.out'
+        });
+
+        // View gallery images
+        gsap.from('.view-image', {
+            scrollTrigger: {
+                trigger: '.view-gallery',
+                start: 'top 70%',
+                toggleActions: 'play none none none'
+            },
+            y: 80,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: 'power3.out'
+        });
+
+        // Story blocks (day section)
+        document.querySelectorAll('.story-block').forEach((block, index) => {
+            const isReverse = block.classList.contains('story-block--reverse');
+            gsap.from(block.querySelector('.story-image'), {
+                scrollTrigger: {
+                    trigger: block,
+                    start: 'top 75%',
+                    toggleActions: 'play none none none'
+                },
+                x: isReverse ? 80 : -80,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out'
+            });
+            gsap.from(block.querySelector('.story-content'), {
+                scrollTrigger: {
+                    trigger: block,
+                    start: 'top 75%',
+                    toggleActions: 'play none none none'
+                },
+                x: isReverse ? -80 : 80,
+                opacity: 0,
+                duration: 1,
+                delay: 0.2,
+                ease: 'power3.out'
+            });
+        });
+
+        // House gallery images
+        gsap.from('.house-image', {
+            scrollTrigger: {
+                trigger: '.house-gallery',
+                start: 'top 70%',
+                toggleActions: 'play none none none'
+            },
+            y: 60,
+            opacity: 0,
+            scale: 0.95,
+            duration: 0.8,
+            stagger: 0.1,
+            ease: 'power3.out'
+        });
+
+        // Contact section
+        gsap.from('.contact-header', {
+            scrollTrigger: {
+                trigger: '.act-contact-minimal',
+                start: 'top 70%',
+                toggleActions: 'play none none none'
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: 'power3.out'
+        });
+
+        gsap.from('.contact-form', {
+            scrollTrigger: {
+                trigger: '.contact-grid',
+                start: 'top 70%',
+                toggleActions: 'play none none none'
+            },
+            x: -60,
+            opacity: 0,
+            duration: 1,
+            ease: 'power3.out'
+        });
+
+        gsap.from('.contact-info', {
+            scrollTrigger: {
+                trigger: '.contact-grid',
+                start: 'top 70%',
+                toggleActions: 'play none none none'
+            },
+            x: 60,
+            opacity: 0,
+            duration: 1,
+            delay: 0.2,
+            ease: 'power3.out'
+        });
+
         // Navigation scroll effect
         const nav = document.querySelector('.nav-floating');
         window.addEventListener('scroll', () => {
