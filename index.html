@@ -86,6 +86,12 @@
 </head>
 <body>
 
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-circle"></div>
+    </div>
+
     <!-- Page Loader -->
     <div class="page-loader" id="pageLoader">
         <div class="loader-content">
@@ -672,6 +678,44 @@
                 document.getElementById('pageLoader').classList.add('hidden');
             }, 1600);
         });
+
+        // ===== CUSTOM CURSOR =====
+        const customCursor = document.getElementById('customCursor');
+        if (customCursor && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+            const cursorDot = customCursor.querySelector('.cursor-dot');
+            const cursorCircle = customCursor.querySelector('.cursor-circle');
+
+            let mouseX = 0, mouseY = 0;
+            let dotX = 0, dotY = 0;
+            let circleX = 0, circleY = 0;
+
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+
+            function animateCursor() {
+                dotX += (mouseX - dotX) * 0.5;
+                dotY += (mouseY - dotY) * 0.5;
+                cursorDot.style.left = dotX + 'px';
+                cursorDot.style.top = dotY + 'px';
+
+                circleX += (mouseX - circleX) * 0.15;
+                circleY += (mouseY - circleY) * 0.15;
+                cursorCircle.style.left = circleX + 'px';
+                cursorCircle.style.top = circleY + 'px';
+
+                requestAnimationFrame(animateCursor);
+            }
+            animateCursor();
+
+            // Hover effect on interactive elements
+            const hoverElements = document.querySelectorAll('a, button, .story-block, .house-image, .gallery-teaser');
+            hoverElements.forEach(el => {
+                el.addEventListener('mouseenter', () => customCursor.classList.add('hover'));
+                el.addEventListener('mouseleave', () => customCursor.classList.remove('hover'));
+            });
+        }
 
         // Navigation scroll effect
         const nav = document.querySelector('.nav-floating');
