@@ -1340,6 +1340,28 @@ a.contact-info-item:hover {
     opacity: 0.4;
 }
 
+.footer-instagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    transition: background 0.3s, transform 0.3s;
+}
+
+.footer-instagram:hover {
+    background: var(--gold);
+    transform: scale(1.1);
+}
+
+.footer-instagram svg {
+    width: 18px;
+    height: 18px;
+}
+
 /* ===== WHATSAPP ===== */
 .whatsapp-float {
     position: fixed;
