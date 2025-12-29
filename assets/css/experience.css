@@ -1577,13 +1577,13 @@ a.contact-info-item:hover {
 }
 
 .legend-available {
-    background: var(--sage-light);
-    border: 1px solid var(--sage);
+    background: var(--cream);
+    border: 2px solid var(--gold);
 }
 
 .legend-booked {
-    background: var(--terracotta);
-    border: 1px solid var(--terracotta);
+    background: var(--earth-400);
+    border: 1px solid var(--earth-600);
 }
 
 .legend-label {
@@ -1657,42 +1657,39 @@ a.contact-info-item:hover {
     padding: 0.75rem 0;
 }
 
-/* Dates disponibles = fond vert clair */
+/* Dates disponibles = fond crème */
 #availability-calendar .fc-daygrid-day {
-    background: var(--sage-light);
+    background: var(--cream);
 }
 
 /* Dates passées = grisées */
 #availability-calendar .fc-day-past {
-    background: var(--cream) !important;
-    opacity: 0.6;
+    background: var(--sand) !important;
+    opacity: 0.5;
 }
 
 #availability-calendar .fc-daygrid-day.fc-day-today {
-    background: var(--sage) !important;
+    background: var(--cream) !important;
+    box-shadow: inset 0 0 0 2px var(--gold);
 }
 
 #availability-calendar .fc-daygrid-day:hover {
-    background: var(--sage);
+    background: var(--cream-dark);
 }
 
 #availability-calendar .fc-event {
-    background: var(--terracotta);
+    background: var(--earth-400);
     border: none;
     border-radius: 4px;
     font-size: 0.75rem;
     padding: 2px 6px;
+    color: var(--white);
 }
 
 /* Style pour les événements en mode background (dates réservées) */
 #availability-calendar .fc-bg-event {
-    background: var(--terracotta) !important;
-    opacity: 1 !important;
-}
-
-/* Les jours avec événements = fond terracotta */
-#availability-calendar .fc-daygrid-day.fc-day-has-event {
-    background: var(--terracotta-light);
+    background: var(--earth-400) !important;
+    opacity: 0.85 !important;
 }
 
 #availability-calendar .fc-event-title {
