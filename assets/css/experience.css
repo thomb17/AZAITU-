@@ -19,6 +19,8 @@
     --gold-dark: #96824a;
     --terracotta: #c17c74;
     --terracotta-light: #d4a59e;
+    --sage: #a8c5a0;
+    --sage-light: #d4e6d0;
 
     --font-serif: 'Cormorant Garamond', Georgia, serif;
     --font-sans: 'Inter', -apple-system, sans-serif;
@@ -1575,8 +1577,8 @@ a.contact-info-item:hover {
 }
 
 .legend-available {
-    background: var(--earth-100);
-    border: 1px solid var(--earth-200);
+    background: var(--sage-light);
+    border: 1px solid var(--sage);
 }
 
 .legend-booked {
@@ -1655,12 +1657,23 @@ a.contact-info-item:hover {
     padding: 0.75rem 0;
 }
 
+/* Dates disponibles = fond vert clair */
+#availability-calendar .fc-daygrid-day {
+    background: var(--sage-light);
+}
+
+/* Dates passées = grisées */
+#availability-calendar .fc-day-past {
+    background: var(--cream) !important;
+    opacity: 0.6;
+}
+
 #availability-calendar .fc-daygrid-day.fc-day-today {
-    background: rgba(201, 169, 98, 0.08);
+    background: var(--sage) !important;
 }
 
 #availability-calendar .fc-daygrid-day:hover {
-    background: var(--earth-50);
+    background: var(--sage);
 }
 
 #availability-calendar .fc-event {
@@ -1674,7 +1687,12 @@ a.contact-info-item:hover {
 /* Style pour les événements en mode background (dates réservées) */
 #availability-calendar .fc-bg-event {
     background: var(--terracotta) !important;
-    opacity: 0.7 !important;
+    opacity: 1 !important;
+}
+
+/* Les jours avec événements = fond terracotta */
+#availability-calendar .fc-daygrid-day.fc-day-has-event {
+    background: var(--terracotta-light);
 }
 
 #availability-calendar .fc-event-title {
