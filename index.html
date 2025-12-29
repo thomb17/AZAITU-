@@ -86,6 +86,16 @@
 </head>
 <body>
 
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <span class="loader-logo">Villa Azaitu</span>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="nav-floating" role="navigation" aria-label="Navigation principale">
         <a href="#" class="nav-logo" aria-label="Villa Azaitu - Accueil">Villa Azaitu</a>
@@ -357,6 +367,27 @@
             </div>
         </section>
 
+        <!-- LOCALISATION -->
+        <section class="act act-location" aria-labelledby="location-title">
+            <div class="location-content">
+                <span class="location-eyebrow">Localisation</span>
+                <h2 id="location-title" class="location-title">Au cœur de Palombaggia</h2>
+                <p class="location-text">À 15 minutes de Porto-Vecchio et 5 minutes à pied de la plus belle plage de Méditerranée.</p>
+            </div>
+            <div class="location-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.67890!2d9.3167!3d41.5667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d9a8f8f8f8f8f8%3A0x0!2sPalombaggia%2C%20Porto-Vecchio!5e0!3m2!1sfr!2sfr!4v1234567890"
+                    width="100%"
+                    height="100%"
+                    style="border:0; border-radius: 10px;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Localisation Villa Azaitu - Palombaggia">
+                </iframe>
+            </div>
+        </section>
+
         <!-- CONTACT & RÉSERVATION -->
         <section class="act act-contact-minimal" id="contact" aria-labelledby="contact-title">
             <div class="contact-container">
@@ -435,6 +466,7 @@
         <nav class="footer-links" aria-label="Navigation secondaire">
             <a href="galerie.html">Galerie photos</a>
             <a href="#contact">Réservation</a>
+            <a href="mentions-legales.html">Mentions légales</a>
         </nav>
         <span class="footer-tagline">Villa de luxe · Palombaggia · Corse du Sud</span>
     </footer>
@@ -456,6 +488,31 @@
     <script>
         // ===== GSAP SCROLL ANIMATIONS =====
         gsap.registerPlugin(ScrollTrigger);
+
+        // Hero parallax effect
+        gsap.to('.act-bg', {
+            yPercent: 30,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: '.act-arrival',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: true
+            }
+        });
+
+        // Hero content fade out on scroll
+        gsap.to('.act-content', {
+            opacity: 0,
+            y: -50,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: '.act-arrival',
+                start: 'top top',
+                end: '50% top',
+                scrub: true
+            }
+        });
 
         // Hero title animation
         gsap.from('.act-title span', {
@@ -607,6 +664,13 @@
             duration: 1,
             delay: 0.2,
             ease: 'power3.out'
+        });
+
+        // Hide page loader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('pageLoader').classList.add('hidden');
+            }, 1600);
         });
 
         // Navigation scroll effect
