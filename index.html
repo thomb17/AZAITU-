@@ -37,14 +37,17 @@
     <link rel="apple-touch-icon" href="favicon.svg">
     <meta name="theme-color" content="#3a2d25">
 
+    <!-- Preload critical assets -->
+    <link rel="preload" href="assets/images/hero-sunset-pool.webp" as="image" type="image/webp">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/experience.css">
 
-    <!-- FullCalendar for availability calendar -->
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css" rel="stylesheet">
+    <!-- FullCalendar -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css">
 
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
@@ -111,10 +114,8 @@
     <!-- HERO : L'ARRIVÉE -->
     <header class="act act-arrival" role="banner">
         <div class="act-bg">
-            <video autoplay muted loop playsinline poster="assets/images/hero-sunset-pool.webp" aria-hidden="true">
-                <source src="assets/videos/arrival.mp4" type="video/mp4">
-            </video>
-            <img src="assets/images/hero-sunset-pool.webp" alt="Villa Azaitu au coucher du soleil - Piscine à débordement avec vue mer à Palombaggia, Corse du Sud" class="act-bg-fallback">
+            <!-- Vidéo désactivée - ajouter assets/videos/arrival.mp4 pour l'activer -->
+            <img src="assets/images/hero-sunset-pool.webp" alt="Villa Azaitu au coucher du soleil - Piscine à débordement avec vue mer à Palombaggia, Corse du Sud" class="act-bg-fallback" id="heroImage" width="1920" height="1280">
         </div>
         <div class="act-overlay"></div>
 
@@ -146,7 +147,7 @@
         <!-- LE CHEMIN VERS PALOMBAGGIA -->
         <section class="act act-path-immersive" aria-labelledby="path-title">
             <div class="path-bg">
-                <img loading="lazy" src="assets/images/baie-palombaggia.webp" alt="Plage de Palombaggia - Eaux turquoise et sable fin à 5 minutes de Villa Azaitu">
+                <img loading="lazy" src="assets/images/baie-palombaggia.webp" alt="Plage de Palombaggia - Eaux turquoise et sable fin à 5 minutes de Villa Azaitu" width="1600" height="1200">
                 <div class="path-bg-overlay"></div>
             </div>
             <div class="path-floating-card">
@@ -185,10 +186,10 @@
 
                 <div class="view-gallery">
                     <figure class="view-image view-image--main">
-                        <img loading="lazy" src="assets/images/terrasse-lounge.webp" alt="Salon extérieur de Villa Azaitu avec vue panoramique sur la piscine à débordement et la mer Méditerranée">
+                        <img loading="lazy" src="assets/images/terrasse-lounge.webp" alt="Salon extérieur de Villa Azaitu avec vue panoramique sur la piscine à débordement et la mer Méditerranée" width="1920" height="1280">
                     </figure>
                     <figure class="view-image view-image--side">
-                        <img loading="lazy" src="assets/images/terrasse-sunset.webp" alt="Terrasse en bois au coucher de soleil avec vue sur la baie">
+                        <img loading="lazy" src="assets/images/terrasse-sunset.webp" alt="Terrasse en bois au coucher de soleil avec vue sur la baie" width="1920" height="1312">
                     </figure>
                     <blockquote class="view-quote">
                         <p>« On ne se lasse jamais de cette vue. Le matin, elle est douce. Le soir, elle est incandescente. Elle change, et nous avec. »</p>
@@ -207,7 +208,7 @@
             <div class="day-story">
                 <article class="story-block">
                     <div class="story-image">
-                        <img loading="lazy" src="assets/images/petit-dejeuner.webp" alt="Petit-déjeuner face à la mer sur la terrasse ensoleillée de Villa Azaitu">
+                        <img loading="lazy" src="assets/images/petit-dejeuner.webp" alt="Petit-déjeuner face à la mer sur la terrasse ensoleillée de Villa Azaitu" width="1920" height="1280">
                     </div>
                     <div class="story-content">
                         <span class="story-time">Le matin</span>
@@ -395,6 +396,42 @@
                     referrerpolicy="no-referrer-when-downgrade"
                     title="Localisation Villa Azaitu - Palombaggia">
                 </iframe>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="act act-faq" id="faq" aria-labelledby="faq-title">
+            <div class="faq-container">
+                <div class="faq-header">
+                    <span class="faq-eyebrow">Questions fréquentes</span>
+                    <h2 id="faq-title" class="faq-title">Tout savoir avant<br>votre séjour</h2>
+                </div>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary class="faq-question">Quels sont les horaires d'arrivée et de départ ?</summary>
+                        <p class="faq-answer">L'arrivée se fait à partir de 17h et le départ avant 10h. Des arrangements peuvent être possibles selon disponibilité, n'hésitez pas à nous contacter.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">La villa est-elle adaptée aux enfants ?</summary>
+                        <p class="faq-answer">Oui, Villa Azaitu accueille les familles avec enfants. La piscine dispose d'une partie moins profonde. Cependant, les enfants doivent toujours être surveillés près de la piscine à débordement.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">Les animaux sont-ils acceptés ?</summary>
+                        <p class="faq-answer">Nous n'acceptons malheureusement pas les animaux de compagnie afin de préserver la qualité des lieux pour tous nos hôtes.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">Comment se rendre à la plage de Palombaggia ?</summary>
+                        <p class="faq-answer">La plage de Palombaggia est accessible à pied en seulement 5 minutes par un chemin privé. Vous pouvez également vous y rendre en voiture (parking disponible).</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">Quels services sont inclus ?</summary>
+                        <p class="faq-answer">Le ménage de fin de séjour, le linge de maison, les serviettes de piscine et le WiFi haut débit sont inclus. Un service de conciergerie est disponible sur demande (chef à domicile, massage, excursions...).</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">Quelle est la durée minimum de location ?</summary>
+                        <p class="faq-answer">En haute saison (juillet-août), la location se fait à la semaine, du samedi au samedi. Hors saison, nous proposons des séjours plus courts avec un minimum de 3 nuits.</p>
+                    </details>
+                </div>
             </div>
         </section>
 
