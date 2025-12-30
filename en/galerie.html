@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Villa Azaitu - Palombaggia, Corsica</title>
+    <meta name="description" content="Discover all the spaces of Villa Azaitu in pictures: suites, pool, cinema room, wine cellar and panoramic views over Palombaggia.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="apple-touch-icon" href="../favicon.svg">
+    <meta name="theme-color" content="#3a2d25">
+
+    <!-- Fonts & CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/galerie.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-circle"></div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <header class="header scrolled">
+        <nav class="nav">
+            <a href="index.html" class="logo">Villa Azaitu</a>
+            <div class="nav-links">
+                <a href="index.html#villa">The Villa</a>
+                <a href="index.html#galerie">Gallery</a>
+                <a href="index.html#espaces">Spaces</a>
+                <a href="index.html#experience">Experience</a>
+                <a href="index.html#contact" class="btn-nav">Book Now</a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#villa">The Villa</a>
+        <a href="index.html#galerie">Gallery</a>
+        <a href="index.html#espaces">Spaces</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#contact">Contact</a>
+    </div>
+
+    <!-- Gallery Hero Compact -->
+    <section class="gallery-hero" id="gallery-hero">
+        <!-- Background Layer -->
+        <div class="gallery-hero-bg">
+            <img loading="lazy" src="../assets/images/drone-3.webp" alt="Aerial view Villa Azaitu">
+        </div>
+        <div class="gallery-hero-overlay"></div>
+        <div class="gallery-hero-grain"></div>
+
+        <!-- Content -->
+        <div class="container">
+            <div class="gallery-hero-content">
+                <span class="section-label">Collection</span>
+                <h1 class="gallery-title">
+                    <span class="title-line">Explore</span>
+                    <span class="title-line title-line--accent">the Villa</span>
+                </h1>
+                <p class="gallery-subtitle">57 photographs to discover every space</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Filters -->
+    <section class="gallery-filters">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="vues">Views & Exteriors</button>
+                <button class="filter-btn" data-filter="piscine">Pool & Terraces</button>
+                <button class="filter-btn" data-filter="master">Master Suite</button>
+                <button class="filter-btn" data-filter="suites">The Suites</button>
+                <button class="filter-btn" data-filter="sdb">Bathrooms</button>
+                <button class="filter-btn" data-filter="vie">Living Spaces</button>
+                <button class="filter-btn" data-filter="loisirs">Leisure</button>
+                <button class="filter-btn" data-filter="annexe">Guest House</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Gallery -->
+    <section class="full-gallery">
+        <div class="container">
+            <div class="gallery-grid-full">
+
+                <!-- VIEWS & EXTERIORS -->
+                <div class="gallery-item-full size-large" data-category="vues" data-src="../assets/images/hero-villa.webp" data-caption="Villa Azaitu - Exterior View">
+                    <img loading="lazy" src="../assets/images/hero-villa.webp" alt="Villa exterior">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Villa Azaitu</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full size-wide" data-category="vues" data-src="../assets/images/hero-drone.webp" data-caption="Aerial View">
+                    <img loading="lazy" src="../assets/images/hero-drone.webp" alt="Drone view">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Aerial View</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vues" data-src="../assets/images/drone-2.webp" data-caption="Drone View">
+                    <img loading="lazy" src="../assets/images/drone-2.webp" alt="Drone view 2">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Drone View</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vues" data-src="../assets/images/drone-3.webp" data-caption="Aerial View">
+                    <img loading="lazy" src="../assets/images/drone-3.webp" alt="Drone view 3">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Aerial View</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vues" data-src="../assets/images/baie-palombaggia.webp" data-caption="Palombaggia Bay">
+                    <img loading="lazy" src="../assets/images/baie-palombaggia.webp" alt="Palombaggia Bay">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Palombaggia Bay</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vues" data-src="../assets/images/baie-2.webp" data-caption="Bay View">
+                    <img loading="lazy" src="../assets/images/baie-2.webp" alt="Bay view">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Bay View</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vues" data-src="../assets/images/hero-sunset.webp" data-caption="Sunset">
+                    <img loading="lazy" src="../assets/images/hero-sunset.webp" alt="Sunset">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Sunset</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vues" data-src="../assets/images/entree.webp" data-caption="Entrance with View">
+                    <img loading="lazy" src="../assets/images/entree.webp" alt="Entrance">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Entrance with View</span>
+                    </div>
+                </div>
+
+                <!-- POOL & TERRACES -->
+                <div class="gallery-item-full size-wide" data-category="piscine" data-src="../assets/images/piscine-1.webp" data-caption="Infinity Pool">
+                    <img loading="lazy" src="../assets/images/piscine-1.webp" alt="Pool">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Infinity Pool</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full size-tall" data-category="piscine" data-src="../assets/images/piscine-2.webp" data-caption="Pool at Sunset">
+                    <img loading="lazy" src="../assets/images/piscine-2.webp" alt="Pool sunset">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Pool at Sunset</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="piscine" data-src="../assets/images/piscine-3.webp" data-caption="Pool View">
+                    <img loading="lazy" src="../assets/images/piscine-3.webp" alt="Pool view">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Pool View</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="piscine" data-src="../assets/images/transat.webp" data-caption="Relaxation Area">
+                    <img loading="lazy" src="../assets/images/transat.webp" alt="Sun loungers">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Relaxation Area</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="piscine" data-src="../assets/images/terrasse.webp" data-caption="The Terrace">
+                    <img loading="lazy" src="../assets/images/terrasse.webp" alt="Terrace">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">The Terrace</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="piscine" data-src="../assets/images/terrasse-master.webp" data-caption="Master Terrace">
+                    <img loading="lazy" src="../assets/images/terrasse-master.webp" alt="Master terrace">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Master Terrace</span>
+                    </div>
+                </div>
+
+                <!-- MASTER SUITE -->
+                <div class="gallery-item-full size-large" data-category="master" data-src="../assets/images/master.webp" data-caption="Master Suite">
+                    <img loading="lazy" src="../assets/images/master.webp" alt="Master Suite">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Master Suite</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="master" data-src="../assets/images/master-jardin.webp" data-caption="Master Suite - Garden View">
+                    <img loading="lazy" src="../assets/images/master-jardin.webp" alt="Master Suite garden">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Master Suite - Garden View</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="master" data-src="../assets/images/master-2.webp" data-caption="Master Suite">
+                    <img loading="lazy" src="../assets/images/master-2.webp" alt="Master Suite">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Master Suite</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="master" data-src="../assets/images/master-3.webp" data-caption="Master Suite">
+                    <img loading="lazy" src="../assets/images/master-3.webp" alt="Master Suite">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Master Suite</span>
+                    </div>
+                </div>
+
+                <!-- THE SUITES -->
+                <div class="gallery-item-full" data-category="suites" data-src="../assets/images/suite-1.webp" data-caption="Suite 1">
+                    <img loading="lazy" src="../assets/images/suite-1.webp" alt="Suite 1">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Suite 1</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="suites" data-src="../assets/images/suite-1b.webp" data-caption="Suite 1">
+                    <img loading="lazy" src="../assets/images/suite-1b.webp" alt="Suite 1">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Suite 1</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="suites" data-src="../assets/images/suite-1c.webp" data-caption="Suite 1">
+                    <img loading="lazy" src="../assets/images/suite-1c.webp" alt="Suite 1">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Suite 1</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="suites" data-src="../assets/images/suite-2.webp" data-caption="Suite 2">
+                    <img loading="lazy" src="../assets/images/suite-2.webp" alt="Suite 2">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Suite 2</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="suites" data-src="../assets/images/suite-2b.webp" data-caption="Suite 2">
+                    <img loading="lazy" src="../assets/images/suite-2b.webp" alt="Suite 2">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Suite 2</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="suites" data-src="../assets/images/suite-2c.webp" data-caption="Suite 2">
+                    <img loading="lazy" src="../assets/images/suite-2c.webp" alt="Suite 2">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Suite 2</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="suites" data-src="../assets/images/suite-2e.webp" data-caption="Suite 2">
+                    <img loading="lazy" src="../assets/images/suite-2e.webp" alt="Suite 2">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Suite 2</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="suites" data-src="../assets/images/suite-3.webp" data-caption="Suite 3">
+                    <img loading="lazy" src="../assets/images/suite-3.webp" alt="Suite 3">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Suite 3</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="suites" data-src="../assets/images/suite-3b.webp" data-caption="Suite 3">
+                    <img loading="lazy" src="../assets/images/suite-3b.webp" alt="Suite 3">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Suite 3</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="suites" data-src="../assets/images/suite-3c.webp" data-caption="Suite 3">
+                    <img loading="lazy" src="../assets/images/suite-3c.webp" alt="Suite 3">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Suite 3</span>
+                    </div>
+                </div>
+
+                <!-- BATHROOMS -->
+                <div class="gallery-item-full" data-category="sdb" data-src="../assets/images/sdb-master.webp" data-caption="Master Bathroom">
+                    <img loading="lazy" src="../assets/images/sdb-master.webp" alt="Master Bathroom">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Master Bathroom</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="sdb" data-src="../assets/images/sdb-master-2.webp" data-caption="Master Bathroom">
+                    <img loading="lazy" src="../assets/images/sdb-master-2.webp" alt="Master Bathroom">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Master Bathroom</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="sdb" data-src="../assets/images/sdb-1.webp" data-caption="Bathroom">
+                    <img loading="lazy" src="../assets/images/sdb-1.webp" alt="Bathroom 1">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Bathroom</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="sdb" data-src="../assets/images/sdb-2.webp" data-caption="Bathroom">
+                    <img loading="lazy" src="../assets/images/sdb-2.webp" alt="Bathroom 2">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Bathroom</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="sdb" data-src="../assets/images/sdb-3.webp" data-caption="Bathroom">
+                    <img loading="lazy" src="../assets/images/sdb-3.webp" alt="Bathroom 3">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Bathroom</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="sdb" data-src="../assets/images/sdb-annexe.webp" data-caption="Guest House Bathroom">
+                    <img loading="lazy" src="../assets/images/sdb-annexe.webp" alt="Guest House Bathroom">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Guest House Bathroom</span>
+                    </div>
+                </div>
+
+                <!-- LIVING SPACES -->
+                <div class="gallery-item-full size-large" data-category="vie" data-src="../assets/images/salon-1.webp" data-caption="Main Living Room">
+                    <img loading="lazy" src="../assets/images/salon-1.webp" alt="Living room">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Main Living Room</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vie" data-src="../assets/images/salon-2.webp" data-caption="Living Room">
+                    <img loading="lazy" src="../assets/images/salon-2.webp" alt="Living room">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Living Room</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vie" data-src="../assets/images/salon-3.webp" data-caption="Living Room">
+                    <img loading="lazy" src="../assets/images/salon-3.webp" alt="Living room">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Living Room</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vie" data-src="../assets/images/salon-4.webp" data-caption="Living Room">
+                    <img loading="lazy" src="../assets/images/salon-4.webp" alt="Living room">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Living Room</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vie" data-src="../assets/images/salon-5.webp" data-caption="Living Room">
+                    <img loading="lazy" src="../assets/images/salon-5.webp" alt="Living room">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Living Room</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vie" data-src="../assets/images/salon-deco.webp" data-caption="Decoration">
+                    <img loading="lazy" src="../assets/images/salon-deco.webp" alt="Decoration">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Decoration</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vie" data-src="../assets/images/produits.webp" data-caption="Local Products">
+                    <img loading="lazy" src="../assets/images/produits.webp" alt="Local products">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Local Products</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vie" data-src="../assets/images/salle-manger.webp" data-caption="Dining Room">
+                    <img loading="lazy" src="../assets/images/salle-manger.webp" alt="Dining room">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Dining Room</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vie" data-src="../assets/images/cuisine.webp" data-caption="Fitted Kitchen">
+                    <img loading="lazy" src="../assets/images/cuisine.webp" alt="Kitchen">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Fitted Kitchen</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vie" data-src="../assets/images/couloir-1.webp" data-caption="Hallway">
+                    <img loading="lazy" src="../assets/images/couloir-1.webp" alt="Hallway">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Hallway</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vie" data-src="../assets/images/couloir-2.webp" data-caption="Hallway">
+                    <img loading="lazy" src="../assets/images/couloir-2.webp" alt="Hallway">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Hallway</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vie" data-src="../assets/images/couloir-3.webp" data-caption="Hallway">
+                    <img loading="lazy" src="../assets/images/couloir-3.webp" alt="Hallway">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Hallway</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vie" data-src="../assets/images/escalier.webp" data-caption="Staircase">
+                    <img loading="lazy" src="../assets/images/escalier.webp" alt="Staircase">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Staircase</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vie" data-src="../assets/images/buanderie.webp" data-caption="Laundry Room">
+                    <img loading="lazy" src="../assets/images/buanderie.webp" alt="Laundry room">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Laundry Room</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="vie" data-src="../assets/images/buanderie-2.webp" data-caption="Laundry Room">
+                    <img loading="lazy" src="../assets/images/buanderie-2.webp" alt="Laundry room">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Laundry Room</span>
+                    </div>
+                </div>
+
+                <!-- LEISURE -->
+                <div class="gallery-item-full size-wide" data-category="loisirs" data-src="../assets/images/cinema.webp" data-caption="Private Cinema Room">
+                    <img loading="lazy" src="../assets/images/cinema.webp" alt="Cinema">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Private Cinema Room</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="loisirs" data-src="../assets/images/cave.webp" data-caption="Wine Cellar">
+                    <img loading="lazy" src="../assets/images/cave.webp" alt="Wine cellar">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Wine Cellar</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="loisirs" data-src="../assets/images/sport.webp" data-caption="Fitness Area">
+                    <img loading="lazy" src="../assets/images/sport.webp" alt="Fitness">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Fitness Area</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="loisirs" data-src="../assets/images/sport-2.webp" data-caption="Fitness Area">
+                    <img loading="lazy" src="../assets/images/sport-2.webp" alt="Fitness">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Fitness Area</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="loisirs" data-src="../assets/images/sport-4.webp" data-caption="Fitness Area">
+                    <img loading="lazy" src="../assets/images/sport-4.webp" alt="Fitness">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Fitness Area</span>
+                    </div>
+                </div>
+
+                <!-- GUEST HOUSE -->
+                <div class="gallery-item-full" data-category="annexe" data-src="../assets/images/annexe.webp" data-caption="Guest House">
+                    <img loading="lazy" src="../assets/images/annexe.webp" alt="Guest house">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Guest House</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="annexe" data-src="../assets/images/annexe-2.webp" data-caption="Guest House">
+                    <img loading="lazy" src="../assets/images/annexe-2.webp" alt="Guest house">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Guest House</span>
+                    </div>
+                </div>
+                <div class="gallery-item-full" data-category="annexe" data-src="../assets/images/annexe-3.webp" data-caption="Guest House">
+                    <img loading="lazy" src="../assets/images/annexe-3.webp" alt="Guest house">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Guest House</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Home -->
+    <section class="back-home">
+        <div class="container">
+            <a href="index.html" class="btn-back">Back to home</a>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <button class="lightbox-prev" aria-label="Previous">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6"></path>
+            </svg>
+        </button>
+        <button class="lightbox-next" aria-label="Next">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"></path>
+            </svg>
+        </button>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-image">
+            <p class="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-brand">
+                <span class="footer-logo">Villa Azaitu</span>
+                <p>The art of exceptional living</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html#villa">The Villa</a>
+                <a href="galerie.html">Gallery</a>
+                <a href="index.html#espaces">Spaces</a>
+                <a href="index.html#experience">Experience</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 Villa Azaitu</p>
+                <p>Palombaggia, Corsica</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/33618100568?text=Hello, I would like information about Villa Azaitu"
+       class="whatsapp-btn"
+       target="_blank"
+       rel="noopener"
+       aria-label="Contact us on WhatsApp">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" aria-label="Close"></button>
+        <button class="lightbox-nav lightbox-prev" aria-label="Previous photo"></button>
+        <button class="lightbox-nav lightbox-next" aria-label="Next photo"></button>
+        <span class="lightbox-counter"></span>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-image">
+            <p class="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="../assets/js/galerie.js"></script>
+
+    <!-- Lightbox JavaScript -->
+    <script>
+    (function() {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = lightbox.querySelector('.lightbox-image');
+        const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+        const lightboxCounter = lightbox.querySelector('.lightbox-counter');
+        const closeBtn = lightbox.querySelector('.lightbox-close');
+        const prevBtn = lightbox.querySelector('.lightbox-prev');
+        const nextBtn = lightbox.querySelector('.lightbox-next');
+
+        const galleryItems = document.querySelectorAll('.gallery-item-full');
+        let currentIndex = 0;
+        let visibleItems = [];
+
+        function updateVisibleItems() {
+            visibleItems = Array.from(galleryItems).filter(item =>
+                item.style.display !== 'none'
+            );
+        }
+
+        function openLightbox(index) {
+            updateVisibleItems();
+            currentIndex = index;
+            updateLightboxContent();
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxContent() {
+            const item = visibleItems[currentIndex];
+            if (!item) return;
+
+            const src = item.dataset.src;
+            const caption = item.dataset.caption || '';
+
+            lightboxImage.src = src;
+            lightboxImage.alt = caption;
+            lightboxCaption.textContent = caption;
+            lightboxCounter.textContent = `${currentIndex + 1} / ${visibleItems.length}`;
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % visibleItems.length;
+            updateLightboxContent();
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
+            updateLightboxContent();
+        }
+
+        // Event listeners
+        galleryItems.forEach((item, index) => {
+            item.style.cursor = 'pointer';
+            item.addEventListener('click', () => {
+                updateVisibleItems();
+                const visibleIndex = visibleItems.indexOf(item);
+                openLightbox(visibleIndex);
+            });
+        });
+
+        closeBtn.addEventListener('click', closeLightbox);
+        prevBtn.addEventListener('click', prevImage);
+        nextBtn.addEventListener('click', nextImage);
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+        });
+
+        // Touch swipe support
+        let touchStartX = 0;
+        lightbox.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+        });
+
+        lightbox.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].clientX;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) nextImage();
+                else prevImage();
+            }
+        });
+    })();
+    </script>
+</body>
+</html>
